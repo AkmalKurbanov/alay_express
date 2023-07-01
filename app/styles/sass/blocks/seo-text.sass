@@ -1,0 +1,60 @@
+.seo-text
+  background: $wc
+  box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.1)
+  border-radius: rem(40) rem(40) 0 0
+  padding: rem(32) 0 rem(18)
+
+  @include lg
+    border-radius: rem(35) rem(35) 0 0
+  @include md
+    border-radius: rem(30) rem(30) 0 0
+  @include sm
+    border-radius: rem(25) rem(25) 0 0
+    padding: rem(20) 0 rem(15)
+  @include xs
+    border-radius: rem(20) rem(20) 0 0
+
+	
+  
+  &__wrap
+    @include aifs
+
+    @include xs
+      flex-direction: column-reverse
+  
+  &__desc
+    margin-right: rem(40)
+    font-size: rem(12)
+    line-height: rem(14.52)
+    color: $bc
+    font-weight: 500
+
+  &__btn
+    @include aic
+    font-size: rem(12)
+    font-weight: 600
+    white-space: nowrap
+    color: $bc
+    cursor: pointer
+    position: relative
+
+    @include xs
+      margin-bottom: rem(15)
+
+    span 
+      padding-right: rem(30)
+
+      &.close-text
+        display: none
+
+    .icon 
+      position: absolute
+      right: 0
+      pointer-events: none
+      transition: $tr
+      transform: rotate(180deg)
+
+
+    &.open
+      .icon
+        transform: none

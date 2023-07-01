@@ -1,0 +1,146 @@
+extends layouts/main
+block title
+  | Интернет-магазинам
+block main
+  .wrapper
+    .content
+
+        include includes/login-popup
+        include includes/mmenu
+        include includes/header
+
+        include includes/online-shopping-tracking
+        include includes/calculator-gradient
+        include includes/advantages
+
+
+        .additional-info 
+          .container 
+            .additional-info__wrap 
+              .additional-info__img 
+                img(src="images/dist/additional-info1.webp", alt="") 
+
+              .additional-info__desc 
+                .additional-info__desc-col
+                  h2.title Только получаешь? <br>
+                    span Начни отправлять! 
+
+                  p Заходишь в Alay Express, только чтобы забрать <br> заказ? Начни отправлять!  
+
+                .additional-info__desc-col 
+                  p.additional-info__black-text В акции могут участвовать только зарегистрированные клиенты. 
+                      a(href="#") Зарегистрироваться
+
+                  ul
+                    each val in ['Отправка без заполнения документов','Вручение за минуту по индивидуальному коду','Кешбэк бонусами, которыми можно оплачивать следующие посылки','Доступ к акциям и скидкам по программе лояльности']
+                      li=val  
+
+        .delivery-steps
+          .container
+            .delivery-steps__wrap
+              .delivery-steps__col
+                .delivery-steps__img
+                  img(src="images/dist/delivery-steps.svg", alt="")
+              .delivery-steps__col
+                h3.title 
+                  span Договор 
+                  | курьерских  
+                  span услуг
+                .text.text--tal 
+                  p Отправляйте документы, товары и другие грузы по всему миру. Безналичный расчёт, система скидок и подробная статистика в личном кабинете  
+                a.btn(href="#") Заполнить анкету 
+              
+              .delivery-steps__col
+                .delivery-steps__item.typical-block
+                  .delivery-steps__item-top
+                    .delivery-steps__item-icon.icon
+                      svg(width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg')
+                        path(d='M18.765 5.18062C19.7585 4.10413 20.2553 3.56588 20.7832 3.25192C22.057 2.49437 23.6255 2.47081 24.9205 3.18978C25.4572 3.48775 25.9693 4.01085 26.9934 5.05704C28.0175 6.10322 28.5296 6.62632 28.8213 7.17459C29.5251 8.49751 29.502 10.0997 28.7605 11.401C28.4531 11.9402 27.9262 12.4477 26.8724 13.4627L14.3342 25.5391C12.3372 27.4625 11.3387 28.4242 10.0908 28.9117C8.84285 29.3991 7.47096 29.3632 4.72717 29.2915L4.35386 29.2817C3.51856 29.2599 3.10091 29.2489 2.85814 28.9734C2.61536 28.6979 2.6485 28.2725 2.71479 27.4216L2.75079 26.9596C2.93736 24.5647 3.03065 23.3673 3.4983 22.291C3.96594 21.2146 4.7726 20.3406 6.38592 18.5927L18.765 5.18062Z' stroke='#009688' stroke-width='2' stroke-linejoin='round')
+                        path(d='M17.3333 5.33337L26.6667 14.6667' stroke='#009688' stroke-width='2' stroke-linejoin='round')
+                        path(d='M18.6667 29.3334L29.3334 29.3334' stroke='#009688' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+
+                    .delivery-steps__item-title Заполните анкету
+
+                  .delivery-steps__item-bottom 
+                    p 
+                      a(href="#") Перейти к анкете,  
+                      |  займетне более 5 минут 
+              
+              .delivery-steps__col
+                .delivery-steps__item.typical-block
+                  .delivery-steps__item-top
+                    .delivery-steps__item-icon.icon
+                      svg(width='33' height='32' viewBox='0 0 33 32' fill='none' xmlns='http://www.w3.org/2000/svg')
+                        path(d='M5.37017 15.9232C4.10614 13.7191 3.49581 11.9193 3.12779 10.095C2.5835 7.39679 3.82909 4.7611 5.89252 3.07932C6.7646 2.36853 7.76432 2.61138 8.28001 3.53655L9.44425 5.62523C10.3671 7.28077 10.8285 8.10855 10.7369 8.98614C10.6454 9.86374 10.0232 10.5785 8.77864 12.008L5.37017 15.9232ZM5.37017 15.9232C7.92868 20.3844 11.9438 24.4017 16.4102 26.9632M16.4102 26.9632C18.6143 28.2272 20.414 28.8376 22.2384 29.2056C24.9366 29.7499 27.5723 28.5043 29.254 26.4408C29.9648 25.5688 29.722 24.569 28.7968 24.0533L26.7081 22.8891C25.0526 21.9663 24.2248 21.5049 23.3472 21.5964C22.4696 21.6879 21.7549 22.3102 20.3253 23.5547L16.4102 26.9632Z' stroke='#009688' stroke-width='2' stroke-linejoin='round')
+                        path(d='M19 9.10916C20.8977 9.915 22.4184 11.4357 23.2243 13.3334M19.872 2.66669C24.5883 4.0277 28.3055 7.74472 29.6667 12.4609' stroke='#009688' stroke-width='2' stroke-linecap='round')
+
+                    .delivery-steps__item-title Примите звонок
+
+                  .delivery-steps__item-bottom 
+                    p Для согласования сотрудничества
+
+              .delivery-steps__col
+                .delivery-steps__item.typical-block
+                  .delivery-steps__item-top
+                    .delivery-steps__item-icon.icon
+                      svg(width='33' height='32' viewBox='0 0 33 32' fill='none' xmlns='http://www.w3.org/2000/svg')
+                        path(d='M19.6825 4.79918C18.2608 3.37752 17.55 2.66669 16.6667 2.66669C15.7834 2.66669 15.0725 3.37752 13.6509 4.79918C12.7978 5.65229 11.9524 6.04836 10.7361 6.04836C9.67415 6.04836 8.16325 5.8424 7.33334 6.67928C6.51 7.50954 6.71505 9.01423 6.71505 10.0694C6.71505 11.2857 6.31894 12.1311 5.46581 12.9842C4.04418 14.4059 3.33336 15.1167 3.33334 16C3.33337 16.8833 4.04419 17.5942 5.46585 19.0158C6.42155 19.9715 6.71505 20.5886 6.71505 21.9306C6.71505 22.9926 6.50909 24.5035 7.346 25.3334C8.17626 26.1567 9.68092 25.9516 10.7361 25.9516C12.0313 25.9516 12.6551 26.205 13.5794 27.1294C14.3666 27.9165 15.4217 29.3333 16.6667 29.3334C17.9116 29.3333 18.9668 27.9165 19.7539 27.1294C20.6783 26.205 21.302 25.9516 22.5973 25.9516C23.6524 25.9516 25.1571 26.1567 25.9874 25.3334M27.8675 12.9842C29.2892 14.4059 30 15.1167 30 16C30 16.8833 29.2892 17.5942 27.8675 19.0158C26.9118 19.9715 26.6183 20.5886 26.6183 21.9306C26.6183 22.9925 26.8243 24.5035 25.9874 25.3334M25.9874 25.3334H26' stroke='#009688' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+                        path(d='M11.3333 13.7436C11.3333 13.7436 14.3333 13.3334 16.6667 18.6667C16.6667 18.6667 23.4118 5.33335 30 2.66669' stroke='#009688' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+
+                    .delivery-steps__item-title Подпишите договор
+
+                  .delivery-steps__item-bottom 
+                    p Запускайте бизнес
+
+        //- .map
+        //-   .container 
+        //-     h2.title.title--tac Доставка по 
+        //-       span всему миру
+
+        //-     .map__map 
+        //-       img(src="images/dist/map.svg", alt="")    
+        
+        //- .delivery-methods
+        //-   .container 
+        //-     .title-wrap
+        //-       h2.title Способы доставки <br>
+        //-         span для ваших задач
+
+        //-       .text Выбирайте удобный способ отправки ваших товаров, а мы обо всем позаботимся! 
+            
+        //-     .delivery-methods__wrap
+
+        //-       .delivery-methods__col.typical-block
+        //-         .delivery-methods__item
+        //-           h3.title.title--h3
+        //-             span Alay Express 
+        //-             | Посылка
+                
+        //-         .delivery-methods__item Доставка отправлений от пункта приема до пункта выдачи по всему миру
+                
+        //-         .delivery-methods__item Уникальная сеть пунктов выдачи в отделениях Alay Express и партнеров
+
+        //-         .delivery-methods__item Бесконтактное получение
+        //-           span.delivery-methods__item-span Максимальные габариты: Для отправки в пункт выдачи в отделении Alay Express — 60×60×60 см, вес до 10 кг.
+
+        //-       .delivery-methods__col.typical-block
+
+        //-         .delivery-methods__item 
+        //-           h3.title.title--h3 
+        //-             span Alay Express 
+        //-             | Курьер
+
+        //-         .delivery-methods__item Доставка курьером от двери до двери по России
+
+        //-         .delivery-methods__item Подходит для отправки посылок весом до 30 кг
+                
+        //-         .delivery-methods__item Бесконтактное получение
+        //-           span.delivery-methods__item-span Размеры – одна сторона не более 150 см, сумма длин всех сторон – не более 300 см
+
+                 
+
+    include includes/seo-text
+    include includes/footer
+
+
+  include includes/scripts 

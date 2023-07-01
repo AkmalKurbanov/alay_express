@@ -1,0 +1,305 @@
+.send-parcel
+  margin-bottom: rem(120)
+
+  @include lg
+    margin-bottom: rem(100)
+
+  @include md
+    margin-bottom: rem(80)
+
+  @include sm
+    margin-bottom: rem(60)
+
+  @include xs
+    margin-bottom: rem(40)
+
+  &__wrap
+    @include jfcsb
+
+    @include md
+      flex-direction: column
+
+  &__col
+    &:last-child
+      margin-left: rem(24)
+
+      @include md
+        margin-left: 0
+
+  .title
+    margin-bottom: rem(32)
+
+  &__input-wrap
+    @include jfcsb
+    margin-bottom: rem(40)
+
+    @include xs
+      flex-direction: column
+      align-items: center
+
+    .btn-switch
+      margin: 0 rem(8)
+      @include aic
+
+      @include xs
+        transform: rotate(90deg)
+
+    &:last-child
+
+      .input
+        &:first-child
+          margin-right: rem(8)
+
+    &-col
+      width: calc( 50% - 4px )
+
+      @include xs
+        width: 100%
+        margin-bottom: rem(20)
+
+      &:last-child
+        margin-bottom: 0
+
+      p
+        margin-top: rem(30)
+        font-weight: 500
+        font-size: rem(13)
+        line-height: rem(14.63)
+
+        @include xs
+          margin-top: rem(15)
+
+  &__kind
+    max-width: rem(400)
+    min-width: rem(400)
+    width: 100%
+
+    @include md
+      @include aistr
+      justify-content: space-between
+      max-width: 100%
+      min-width: 100%
+
+    @include xs
+      flex-direction: column
+
+    &-item
+      padding: rem(40)
+      display: block
+      margin-bottom: rem(30)
+      cursor: pointer
+      position: relative
+      overflow: hidden
+      transition: $tr
+
+      @include md
+        width: calc(50% - 5px)
+        padding: rem(30)
+
+      @include sm
+        padding: rem(15)
+
+      @include xs
+        width: 100%
+
+      &-top
+        @include aic-jfcsb
+        margin-bottom: rem(20)
+
+        @include sm
+          flex-direction: column
+          align-items: flex-start
+          margin-bottom: rem(10)
+
+        @include xs
+          flex-direction: row
+
+      &-radio
+        @include aic
+
+        @include sm
+          margin-bottom: rem(10)
+
+        input
+          position: relative
+
+          &:before,
+          &:after
+            position: absolute
+            content: ''
+            border-radius: 100%
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+            z-index: 1
+
+          &:before
+            width: rem(21)
+            height: rem(21)
+            background: $mc
+
+          &:after
+            background: $wc
+            width: rem(11)
+            height: rem(11)
+
+      &-title
+        margin-left: rem(15)
+
+      &-title,
+      &-price
+        color: $bc
+        font-size: rem(20)
+        font-weight: 600
+        position: relative
+        z-index: 1
+        transition: $tr
+
+        @include sm
+          font-size: rem(18)
+
+      &-bottom
+        position: relative
+        z-index: 1
+        transition: $tr
+        p
+          font-size: rem(15)
+          font-weight: 500
+          line-height: rem(22)
+          transition: $tr
+
+          @include sm
+            font-size: rem(14)
+            line-height: rem(20)
+
+        span
+          font-size: rem(11)
+          font-weight: 500
+          transition: $tr
+          margin-top: rem(40)
+          display: block
+
+          @include sm
+            margin-top: rem(25)
+
+      &.active
+        background: #4CC499
+        *
+          color: $wc
+
+  &__package-info-wrap
+    margin-top: rem(80)
+
+    @include md
+      margin-top: rem(30)
+      margin-bottom: rem(30)
+
+  &__package-info
+    padding: rem(24)
+    @include aic-jfcsb
+    max-width: rem(650)
+    width: 100%
+
+    @include lg
+      padding: rem(20)
+      border-radius: rem(20)
+
+    @include xs
+      padding: rem(15)
+      max-width: none
+      display: inline-flex
+      width: auto
+
+    &-col
+      &:last-child
+        margin-left: rem(40)
+
+    &-title
+      font-size: rem(15)
+      color: $mc
+      font-weight: 500
+
+    &-desc
+      font-size: rem(12)
+      font-weight: 500
+
+    &-sizes
+      margin: rem(15) 0
+      display: flex
+
+      &-item
+        border-right: rem(1) solid $bc
+        padding: 0 rem(15)
+        text-align: right
+
+        @include lg
+          padding: 0 rem(7)
+
+        @include xs
+          padding: 0 rem(5)
+
+        &:first-child
+          padding-left: 0
+
+          p
+            @include jfcsb
+
+            i
+              font-size: rem(10)
+              font-style: normal
+              margin-right: rem(15)
+              color: $bc
+              font-weight: 500
+
+              @include xs
+                margin-right: 0
+
+        p
+          color: $bc
+          font-size: rem(13)
+          margin-bottom: rem(8)
+
+          @include xs
+            font-size: rem(11)
+
+          &:last-child
+            margin-bottom: 0
+
+          span
+            margin-left: rem(8)
+            color: #AFAFAF
+            font-weight: 600
+            text-transform: uppercase
+
+    &-img
+      margin-left: rem(10)
+
+      @include lg
+        width: rem(100)
+
+      @include xs
+        display: none
+  &__tabs
+    @include aic
+    margin-top: rem(20)
+    margin-bottom: rem(40)
+  &__tab
+    padding: rem(15) rem(25)
+    border-radius: rem(8) rem(8) 0 0
+    background: $wc
+    transition: $tr
+    margin-right: rem(8)
+    color: #808080
+    font-size: rem(14)
+    font-weight: 500
+
+    &:last-child
+      margin-right: 0
+
+    &:hover,
+    &_active
+      color: $mc
+      box-shadow: 0px -5px 8px 0px rgba(0, 0, 0, 0.10)
+
+  .btn
+    width: 100%

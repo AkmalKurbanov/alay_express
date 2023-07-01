@@ -1,0 +1,648 @@
+*
+  margin: 0
+  box-sizing: border-box
+
+html,
+body
+  height: 100%
+  position: relative
+
+  &.no-scroll
+    overflow: hidden
+
+.wrapper
+  display: flex
+  flex-direction: column
+  min-height: 100%
+
+  .content
+    flex: 1 0 auto
+
+.container
+  width: 100%
+  padding-right: rem(15px)
+  padding-left: rem(15px)
+  margin-right: auto
+  margin-left: auto
+  max-width: rem(1310px)
+  position: relative
+  box-sizing: border-box
+  @include lg
+    max-width: rem(960px)
+  @include md
+    max-width: rem(720px)
+  @include sm
+    max-width: rem(540px)
+  @include xs
+    max-width: 100%
+
+img
+  width: 100%
+  max-width: 100%
+
+a
+  transition: $tr
+  text-decoration: none
+
+  &:hover
+    color: $mc
+
+// btn  
+.btn
+  background: $mc
+  color: $wc
+  outline: none
+  cursor: pointer
+  border: none
+  border: rem(1) solid $mc
+  transition: $tr
+  border-radius: rem(8)
+  color: $wc
+  @include aic-jcc
+  display: inline-flex
+  padding: rem(9) rem(25)
+  font-size: rem(14)
+  max-height: rem(44)
+  min-height: rem(44)
+  box-sizing: border-box
+  font-weight: 500
+
+  &:hover
+    background: $bc
+    color: $wc
+    border-color: $bc
+
+  .icon
+    margin-right: rem(8)
+
+  &--empty
+    background: none
+    color: $mc
+
+  &--on-dark-bg
+
+    &:hover
+      background: $wc
+      color: $bc
+      border-color: $wc
+
+// btn end  
+
+// icon  
+.icon
+  @include aic-jcc
+  width: rem(24)
+  height: rem(24)
+
+  svg
+    width: 100%
+    height: 100%
+
+// icon end  
+
+// title  
+.title-wrap
+  @include aife-jfcsb
+
+  @include md
+    flex-direction: column
+    align-items: flex-start
+  
+  .title
+    @include md
+      margin-bottom: rem(20)
+
+  .text
+    @include md
+      text-align: left  
+
+.title
+  font-weight: 500
+  color: $bc
+  font-size: rem(64)
+  line-height: rem(64)
+  margin: 0
+
+  @include lg
+    font-size: rem(54)
+    line-height: rem(54)
+
+  @include md
+    font-size: rem(44)
+    line-height: rem(44)
+
+  @include sm
+    font-size: rem(34)
+    line-height: rem(34)
+
+  @include xs
+    font-size: rem(24)
+    line-height: rem(24)
+
+
+  span
+    color: $mc
+
+  &--light
+    color: $wc  
+
+  &--h3
+    font-size: rem(32)
+    font-weight: 500
+    line-height: rem(39)  
+
+  &--h4
+    font-size: rem(20)
+    font-weight: 700
+    line-height: rem(22)  
+
+  &--tac
+    text-align: center
+
+// title end  
+
+// seo text  
+.text
+  text-align: right
+  max-width: rem(500)
+  min-width: rem(400)
+
+  @include xs
+    max-width: 100%
+    min-width: 100%
+
+  p
+    color: $textcolor
+    line-height: rem(23)
+    font-weight: 500
+    @include xs
+      br
+        display: none
+
+  &--tal
+    text-align: left  
+// seo text end  
+
+// input  
+.input,
+.select
+  @include aic-jfcsb
+  background: $wc
+  border-radius: rem(8)
+  border: rem(1) solid #E3E3E3
+  min-height: rem(44)
+  max-height: rem(44)
+  width: 100%
+
+  &__pass-icon
+    cursor: pointer
+    margin-right: 0!important
+
+    &.open
+      display: block
+
+    &.close
+      opacity: 0.3
+      display: none
+
+    
+
+  &.open
+    .label
+      transform: translate(0, -40px)
+      font-size: rem(12)
+
+    
+
+      
+
+.label
+  position: absolute
+  transition: $tr
+  top: 50%
+  left: rem(15)
+  transform: translateY(-50%)
+  
+  &.active1
+    transform: translate(0, -40px)
+    font-size: rem(12)
+
+  
+
+.input
+  position: relative
+  padding: rem(10) rem(11)
+  .icon
+    margin-right: rem(10)
+
+  input
+    background: $wc
+    border: none
+    outline: none
+    color: $textcolor
+    font-size: rem(15)
+    font-weight: 400
+    width: 100%
+    height: 100%
+
+
+
+  &.not-empty
+    .label
+      transform: translate(0, -40px)
+      font-size: rem(12)
+
+  &--icon
+    .label
+      transform: translate(34px, -50%)    
+
+
+.ckeckbox
+  position: relative
+
+  input
+    z-index: 9
+    width: rem(19)
+    height: rem(19)
+    opacity: 0
+    cursor: pointer
+    
+    &:checked
+      &~span
+        background-color: $mc
+        border: none
+        svg
+          display: block
+
+
+  span
+    width: rem(19)  
+    height: rem(19)
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    border: rem(1) solid $mc
+    border-radius: rem(4)
+    cursor: pointer
+    position: absolute
+    background-color: $wc
+    pointer-events: none
+
+    svg
+      width: 100%
+      height: 100%
+      display: none
+
+
+// input end  
+
+// select
+.select
+  cursor: pointer
+  position: relative
+  padding: rem(10) rem(10)
+
+  &__dropdown
+    transition: $tr
+    opacity: 0
+    pointer-events: none
+    transform: translateY(-30px)
+    position: absolute
+    top: calc( 100% + 1px )
+    left: 0
+    width: 100%
+    box-shadow: 0 15px 15px rgba(0,0,0,.1)
+    border-radius: rem(8)
+    overflow: hidden
+    border: rem(1) solid #e3e3e3
+
+
+    &-option
+      padding: rem(5) rem(10)
+      transition: $tr
+      background: $wc
+      &:hover
+        background: $mc
+        color: $wc
+
+
+  .tab_select
+    
+    .tabs_select
+      @include aic-jfcsb
+      padding: 0
+      margin: 0
+      background: $wc
+
+
+      li
+        list-style: none
+        position: relative
+        overflow: hidden
+        width: 100%
+        margin: 0
+
+        &:before
+          position: absolute
+          content: ''
+          width: 100%
+          height: rem(2)
+          background: $mc
+          transition: $tr
+          bottom: 0
+
+        &:first-child
+          &:before
+            left: 100%
+
+        &:last-child
+          &:before
+            right: 100%
+
+        &.current
+          a
+            color: $mc
+          &:first-child
+            &:before
+              left: 0
+
+          &:last-child
+            &:before
+              right: 0
+
+        a
+          @include aic-jcc
+          text-align: center   
+          padding: rem(20)   
+          font-size: rem(14)
+          font-weight: 500
+          text-decoration: none
+          color: $textcolor
+
+          &:hover
+            color: $mc  
+    
+    .tabs_item_select
+      padding: rem(20) 0
+      background: $wc
+      height: 18.75rem
+      overflow-y: scroll
+      display: none
+      
+      &:first-child
+        display: block
+      
+      .input-wrap
+        padding: 0 rem(10)
+      
+      .input
+        margin-bottom: rem(25)
+
+        &:last-child
+          margin-bottom: 0
+
+      .label
+        color: $textcolor    
+      
+
+  &__list
+    &-item
+      display: flex
+      padding: 0.625rem  0.625rem 0.625rem
+      position: relative
+      cursor: pointer
+      transition: $tr
+
+      &:hover
+        background: rgba($textcolor, .2)
+
+      input
+        height: 0.9375rem
+        position: absolute
+        right: 0.625rem
+        top: 0.625rem
+        width: 0.9375rem
+
+      &-img
+        min-width: rem(30)
+        max-width: rem(30)
+        width: 100%
+        margin-right: rem(7)
+
+      &-desc
+        h2
+          color: $mc
+          font-size: rem(15)
+          margin-bottom: rem(5)
+
+        span
+          font-size: rem(13)
+          color: $bc
+          margin-bottom: rem(5)
+
+        p
+          font-size: rem(13)
+          color: $textcolor
+
+  &.open
+    .select__dropdown
+      opacity: 1
+      pointer-events: inherit
+      transform: none
+    
+    .icon
+      transition: $tr
+      transform: rotate(180deg)
+
+      
+// select end
+
+// typical block  
+
+.typical-block-wrap
+  @include fww-jfcsb
+  
+  .typical-block
+    margin-bottom: rem(25)
+
+    @include lg
+      margin-bottom: rem(20)
+    
+
+.typical-block
+  background: #F8F8F8
+  border-radius: rem(40)
+  transition: $tr
+  
+  @include lg
+    border-radius: rem(25)
+
+  @include md
+    border-radius: rem(20)
+
+  @include sm
+    border-radius: rem(15)
+  
+  @include xs
+    border-radius: rem(10)
+
+  &--hovered
+    &:hover
+      background: $mc
+      position: relative
+      
+      &:after
+        opacity: .1
+    
+    &:after
+      position: absolute
+      content: ''
+      background-image: url('../images/dist/logo-hover.svg') 
+      width: rem(180)
+      height: rem(180)
+      right: rem(30)
+      top: 50%
+      transform: translateY(-50%)
+      transition: $tr
+      opacity: 0
+      pointer-events: none
+
+  &--quarter
+    width: calc( 25% - 20px )         
+
+  &--half
+    width: calc( 50% - 13.5px )   
+  
+  &--full
+    width: 100%
+
+  &--painted
+    background-color: $mc
+    *
+      color: $wc
+// typical block end  
+
+// social    
+.social
+  ul
+    margin: 0
+    padding: 0
+
+    li
+      display: inline-block
+      margin-right: rem(20)
+      
+      &:last-child
+        margin-right: 0
+      
+      a
+        @include aic-jcc
+        width: rem(32)
+        height: rem(32)
+        border-radius: 100%
+        transition: $tr
+        background: $mc
+
+        &:hover
+          box-shadow: 0px 0 8px 3px rgba(0,150,136,.9)
+
+// social end    
+
+// slider    
+.slider
+  position: relative
+  margin-top: rem(40) 
+
+  @include lg
+    margin-top: rem(35) 
+  
+  @include md
+    margin-top: rem(30) 
+  
+  @include sm
+    margin-top: rem(25) 
+
+  &__nav  
+    position: absolute
+    height: rem(30)
+    right: 0
+    bottom: calc(100% + 60px)
+    @include aic-jfcsb
+    width: rem(135)
+
+    @include lg
+      width: rem(100)
+      bottom: calc(100% + 50px)
+
+    @include md
+      width: rem(70)
+      bottom: calc(100% + 40px)
+
+    @include sm
+      width: calc(100% + 60px)
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)  
+      z-index: 2
+
+    @include xs
+      display: none  
+
+
+    &-item
+      position: relative
+      width: rem(15)
+      height: rem(30)
+      
+      @include lg
+        width: rem(10)
+        height: rem(20)
+
+      &:after
+        font-size: rem(30) 
+        color: $mc
+        
+        @include lg
+          font-size: rem(20) 
+
+  
+    
+// slider end    
+
+
+// map
+.map
+  margin-bottom: rem(120)
+  &__map
+    margin-top: rem(40)
+// map end  
+
+// conter    
+.counter-item
+  font-size: rem(14)
+  font-weight: 600
+  color: $bc
+
+  &__counter
+    @include aic
+    font-size: rem(49)
+    margin-bottom: rem(5)
+
+    @include lg
+      font-size: rem(40)
+
+    @include md
+      font-size: rem(35)
+
+    @include sm
+      font-size: rem(30)
+
+    @include xs
+      font-size: rem(25)  
+
+
+
+
+  &--active
+    color: $mc
+// conter end    

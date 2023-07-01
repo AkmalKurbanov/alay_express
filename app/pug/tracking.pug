@@ -1,0 +1,268 @@
+extends layouts/main
+block title
+  | Отследить посылку 
+block main
+  .wrapper
+    .content
+
+        include includes/login-popup
+        include includes/mmenu
+        include includes/header
+
+        .tracking
+          .container 
+            h3.title.title--h3 Отследить отправление
+
+            form(action="")
+              .tracking__form.tracking-block
+                .input.input--icon
+                  .icon 
+                    svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+                      g(clip-path='url(#clip0_27_11)')
+                        path(d='M16.5833 16.5833L20.3333 20.3333' stroke='#009688' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+                        path(d='M18.6667 11.1667C18.6667 7.02452 15.3088 3.66666 11.1667 3.66666C7.02452 3.66666 3.66666 7.02452 3.66666 11.1667C3.66666 15.3088 7.02452 18.6667 11.1667 18.6667C15.3088 18.6667 18.6667 15.3088 18.6667 11.1667Z' stroke='#009688' stroke-width='1.5' stroke-linejoin='round')
+                      defs
+                        clippath#clip0_27_11
+                          rect(width='20' height='20' fill='white' transform='translate(2 2)')
+
+                  label(for="from-where").label Откуда
+                  input(type="text" id="from-where")
+
+                button.btn(type="submit") Оформить посылку
+                .tracking__additional-info 
+                  .tracking__additional-info-icon.icon   
+                    svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+                      circle(cx='12' cy='12' r='9' fill='#009688')
+                      path(d='M13 7C13 7.55228 12.5523 8 12 8C11.4477 8 11 7.55228 11 7C11 6.44772 11.4477 6 12 6C12.5523 6 13 6.44772 13 7Z' fill='white')
+                      path(d='M12 16.5V11.5C12 11.035 12 10.8025 11.9489 10.6118C11.8102 10.0941 11.4059 9.68981 10.8882 9.55111C10.6975 9.5 10.465 9.5 10 9.5V9.5M12 16.5H13.5M12 16.5H10.5' stroke='white')
+                  .tracking__additional-info-desc
+                    p 
+                      a(href="#") Войдите,
+                      |  чтобы видеть историю ваших отправлений   
+
+
+            .tracking__info.tracking-block
+              .tracking__info-top
+                .tracking__info-number № 1423947251
+                .tracking__info-city Москва — Бишкек
+
+                .tracking__info-status.on-way
+                  .tracking__info-status-icon.icon 
+                    svg(width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg')
+                      ellipse(cx='20.5001' cy='21.3997' rx='1.79993' ry='1.79994' stroke='#009688')
+                      ellipse(cx='11.5001' cy='21.3997' rx='1.79993' ry='1.79994' stroke='#009688')
+                      path(d='M9.6999 21.3749C8.71289 21.3257 8.09715 21.1789 7.65899 20.7407C7.22082 20.3026 7.07399 19.6868 7.02479 18.6998M13.2998 21.3997H18.6996M22.2994 21.3749C23.2865 21.3257 23.9022 21.1789 24.3404 20.7407C24.9993 20.0817 24.9993 19.0211 24.9993 16.8999V15.0999H20.7695C20.0995 15.0999 19.7644 15.0999 19.4933 15.0118C18.9453 14.8338 18.5157 14.4042 18.3377 13.8562C18.2496 13.5851 18.2496 13.2501 18.2496 12.58C18.2496 11.575 18.2496 11.0725 18.1174 10.6658C17.8504 9.8438 17.206 9.19938 16.384 8.93231C15.9773 8.80017 15.4748 8.80017 14.4697 8.80017H7' stroke='#009688' stroke-linecap='round' stroke-linejoin='round')
+                      path(d='M7 12.4H12.3998' stroke='#009688' stroke-linecap='round' stroke-linejoin='round')
+                      path(d='M7 15.0999H10.5999' stroke='#009688' stroke-linecap='round' stroke-linejoin='round')
+                      path(d='M18.249 10.6002H19.8881C21.1978 10.6002 21.8527 10.6002 22.3857 10.9185C22.9186 11.2369 23.2291 11.8135 23.85 12.9667L24.9988 15.1001' stroke='#009688' stroke-linecap='round' stroke-linejoin='round')
+
+                  | В пути
+
+                .tracking__info-status.created(style="display: none")
+                  .tracking__info-status-icon.icon 
+                    svg(width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg')
+                      rect(width='48' height='48' rx='24' fill='#009688')
+                      path(d='M24.8125 14H21C17.2288 14 15.3431 14 14.1716 15.1716C13 16.3431 13 18.2288 13 22V33C13 33.9428 13 34.4142 13.2929 34.7071C13.5858 35 14.0572 35 15 35H26C29.7712 35 31.6569 35 32.8284 33.8284C34 32.6569 34 30.7712 34 27V23.1875' stroke='white' stroke-width='1.5')
+                      path(d='M19 21L28 21' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+                      path(d='M19 27H24' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+                      path(d='M34.5 18L34.5 9M30 13.5H39' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+
+                  | Создан 
+
+                .tracking__info-status.ready-for-delivery(style="display: none")
+                  .tracking__info-status-icon.icon 
+                    svg(width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg')
+                      rect(width='48' height='48' rx='24' fill='#009688')
+                      path(d='M13 20V34C13 34.9428 13 35.4142 13.2929 35.7071C13.5858 36 14.0572 36 15 36H33C33.9428 36 34.4142 36 34.7071 35.7071C35 35.4142 35 34.9428 35 34V20' stroke='white' stroke-width='1.5')
+                      path(d='M38 22L24.5812 12.4152C24.2335 12.1668 23.7665 12.1668 23.4188 12.4152L10 22' stroke='white' stroke-width='1.5' stroke-linecap='round')
+                      path(d='M28 35V27C28 25.8954 27.1046 25 26 25H22C20.8954 25 20 25.8954 20 27V35' stroke='white' stroke-width='1.5' stroke-linejoin='round')
+                      path(d='M34 17V12' stroke='white' stroke-width='1.5' stroke-linecap='round')
+
+                  | Готов к выдаче 
+
+                .tracking__info-status.awarded(style="display: none")
+                  .tracking__info-status-icon.icon 
+                    svg(width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg')
+                      rect(width='48' height='48' rx='24' fill='#009688')
+                      path(d='M13 20V34C13 34.9428 13 35.4142 13.2929 35.7071C13.5858 36 14.0572 36 15 36H33C33.9428 36 34.4142 36 34.7071 35.7071C35 35.4142 35 34.9428 35 34V20' stroke='white' stroke-width='1.5')
+                      path(d='M38 22L24.5812 12.4152C24.2335 12.1668 23.7665 12.1668 23.4188 12.4152L10 22' stroke='white' stroke-width='1.5' stroke-linecap='round')
+                      path(d='M28 35V27C28 25.8954 27.1046 25 26 25H22C20.8954 25 20 25.8954 20 27V35' stroke='white' stroke-width='1.5' stroke-linejoin='round')
+                      path(d='M34 17V12' stroke='white' stroke-width='1.5' stroke-linecap='round')
+
+                  | Вручен
+
+              .tracking__info-way 
+                .tracking__info-way-top 
+                  .tracking__info-way-point Москва 
+                  .tracking__info-way-point Бишкек
+
+                .tracking__info-way-line 
+                  .tracking__info-way-marker(style="width:65%")
+
+                    span.on-way-marker
+                      svg(width='41' height='40' viewBox='0 0 41 40' fill='none' xmlns='http://www.w3.org/2000/svg')
+                        rect(x='0.3125' width='40' height='40' rx='20' fill='#009688')
+                        circle(cx='25.9374' cy='26.7497' r='2.24992' stroke='white' stroke-width='1.5')
+                        circle(cx='14.6874' cy='26.7497' r='2.24992' stroke='white' stroke-width='1.5')
+                        path(d='M12.4374 26.7187C11.2036 26.6572 10.4339 26.4736 9.88623 25.9259C9.33852 25.3782 9.15499 24.6086 9.09349 23.3748M16.9372 26.7497H23.687M28.1868 26.7187C29.4206 26.6572 30.1902 26.4736 30.7379 25.9259C31.5617 25.1022 31.5617 23.7764 31.5617 21.1249V18.875H26.2744C25.4368 18.875 25.0181 18.875 24.6791 18.7648C23.9942 18.5423 23.4572 18.0053 23.2346 17.3203C23.1245 16.9814 23.1245 16.5626 23.1245 15.7251C23.1245 14.4688 23.1245 13.8406 22.9593 13.3322C22.6255 12.3048 21.8199 11.4993 20.7925 11.1654C20.2841 11.0002 19.656 11.0002 18.3997 11.0002H9.0625' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+                        path(d='M9.0625 15.5H15.8123' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+                        path(d='M9.0625 18.8749H13.5623' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+                        path(d='M23.124 13.2502H25.1728C26.81 13.2502 27.6286 13.2502 28.2948 13.6482C28.961 14.0461 29.3491 14.7668 30.1253 16.2083L31.5612 18.875' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+ 
+                  
+                    span.created-marker(style="display: none")
+                      svg(width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg')
+                        rect(width='48' height='48' rx='24' fill='#009688')
+                        path(d='M24.8125 14H21C17.2288 14 15.3431 14 14.1716 15.1716C13 16.3431 13 18.2288 13 22V33C13 33.9428 13 34.4142 13.2929 34.7071C13.5858 35 14.0572 35 15 35H26C29.7712 35 31.6569 35 32.8284 33.8284C34 32.6569 34 30.7712 34 27V23.1875' stroke='white' stroke-width='1.5')
+                        path(d='M19 21L28 21' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+                        path(d='M19 27H24' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+                        path(d='M34.5 18L34.5 9M30 13.5H39' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+                    
+                    span.ready-for-delivery(style="display: none")
+                      svg(width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg')
+                        rect(width='48' height='48' rx='24' fill='#009688')
+                        path(d='M13 20V34C13 34.9428 13 35.4142 13.2929 35.7071C13.5858 36 14.0572 36 15 36H33C33.9428 36 34.4142 36 34.7071 35.7071C35 35.4142 35 34.9428 35 34V20' stroke='white' stroke-width='1.5')
+                        path(d='M38 22L24.5812 12.4152C24.2335 12.1668 23.7665 12.1668 23.4188 12.4152L10 22' stroke='white' stroke-width='1.5' stroke-linecap='round')
+                        path(d='M28 35V27C28 25.8954 27.1046 25 26 25H22C20.8954 25 20 25.8954 20 27V35' stroke='white' stroke-width='1.5' stroke-linejoin='round')
+                        path(d='M34 17V12' stroke='white' stroke-width='1.5' stroke-linecap='round')
+
+                    span.awarded(style="display: none")
+                      svg(width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg')
+                        rect(width='48' height='48' rx='24' fill='#009688')
+                        path(d='M13 20V34C13 34.9428 13 35.4142 13.2929 35.7071C13.5858 36 14.0572 36 15 36H33C33.9428 36 34.4142 36 34.7071 35.7071C35 35.4142 35 34.9428 35 34V20' stroke='white' stroke-width='1.5')
+                        path(d='M38 22L24.5812 12.4152C24.2335 12.1668 23.7665 12.1668 23.4188 12.4152L10 22' stroke='white' stroke-width='1.5' stroke-linecap='round')
+                        path(d='M28 35V27C28 25.8954 27.1046 25 26 25H22C20.8954 25 20 25.8954 20 27V35' stroke='white' stroke-width='1.5' stroke-linejoin='round')
+                        path(d='M34 17V12' stroke='white' stroke-width='1.5' stroke-linecap='round')
+
+              .tracking__info-col-wrap
+                .tracking__info-col
+                  .tracking__info-status-list
+
+                    .tracking__info-status-item.completed
+                      .tracking__info-status-item-left
+                        div
+                          .tracking__info-status-item-icon.icon
+                            svg(width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg')
+                              rect(width='48' height='48' rx='24')
+                              path(d='M24.8125 14H21C17.2288 14 15.3431 14 14.1716 15.1716C13 16.3431 13 18.2288 13 22V33C13 33.9428 13 34.4142 13.2929 34.7071C13.5858 35 14.0572 35 15 35H26C29.7712 35 31.6569 35 32.8284 33.8284C34 32.6569 34 30.7712 34 27V23.1875' stroke='white' stroke-width='1.5')
+                              path(d='M19 21L28 21' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+                              path(d='M19 27H24' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+                              path(d='M34.5 18L34.5 9M30 13.5H39' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+
+                        div
+                          span Создан
+                      .tracking__info-status-item-right
+                        span 21.12.2022
+
+                    .tracking__info-status-item.completed
+                      .tracking__info-status-item-left
+                        div
+                          .tracking__info-status-item-icon.icon
+                            svg(width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg')
+                              rect(width='48' height='48' rx='24')
+                              ellipse(cx='30.7497' cy='32.0997' rx='2.6999' ry='2.6999' stroke='white' stroke-width='1.5')
+                              ellipse(cx='17.2497' cy='32.0997' rx='2.6999' ry='2.6999' stroke='white' stroke-width='1.5')
+                              path(d='M14.5499 32.0624C13.0693 31.9886 12.1457 31.7684 11.4885 31.1112C10.8312 30.4539 10.611 29.5303 10.5372 28.0498M19.9497 32.0996H28.0494M33.4492 32.0624C34.9297 31.9886 35.8533 31.7684 36.5105 31.1112C37.499 30.1227 37.499 28.5317 37.499 25.3499V22.65H31.1543C30.1492 22.65 29.6467 22.65 29.24 22.5178C28.418 22.2508 27.7736 21.6063 27.5065 20.7844C27.3744 20.3777 27.3744 19.8752 27.3744 18.8701C27.3744 17.3625 27.3744 16.6087 27.1762 15.9987C26.7756 14.7658 25.8089 13.7991 24.576 13.3985C23.966 13.2003 23.2122 13.2003 21.7046 13.2003H10.5' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+                              path(d='M10.5 18.6001H18.5997' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+                              path(d='M10.5 22.6499H15.8998' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+                              path(d='M27.374 15.9003H29.8326C31.7972 15.9003 32.7795 15.9003 33.579 16.3778C34.3784 16.8553 34.8441 17.7202 35.7755 19.45L37.4987 22.65' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+                        div
+                          span В пути
+                          
+                          .tracking__info-status-item-dropdown-trigger 
+                            span Подробнее 
+                            .tracking__info-status-item-dropdown
+                              p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, quidem!
+
+                            .icon 
+                              svg(width='17' height='18' viewBox='0 0 17 18' fill='none' xmlns='http://www.w3.org/2000/svg')
+                                path(d='M12.75 6.875L8.5 11.125L4.25 6.875' stroke='#009688')
+
+
+
+                      .tracking__info-status-item-right
+                        span 16.01.2023
+
+                    .tracking__info-status-item
+                      .tracking__info-status-item-left
+                        div
+                          .tracking__info-status-item-icon.icon
+                            svg(width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg')
+                              rect(width='48' height='48' rx='24')
+                              path(d='M13 20V34C13 34.9428 13 35.4142 13.2929 35.7071C13.5858 36 14.0572 36 15 36H33C33.9428 36 34.4142 36 34.7071 35.7071C35 35.4142 35 34.9428 35 34V20' stroke='white' stroke-width='1.5')
+                              path(d='M38 22L24.5812 12.4152C24.2335 12.1668 23.7665 12.1668 23.4188 12.4152L10 22' stroke='white' stroke-width='1.5' stroke-linecap='round')
+                              path(d='M28 35V27C28 25.8954 27.1046 25 26 25H22C20.8954 25 20 25.8954 20 27V35' stroke='white' stroke-width='1.5' stroke-linejoin='round')
+                              path(d='M34 17V12' stroke='white' stroke-width='1.5' stroke-linecap='round')
+                                
+                        div
+                          span Готов к выдаче
+                          
+                    .tracking__info-status-item
+                      .tracking__info-status-item-left
+                        div
+                          .tracking__info-status-item-icon.icon
+                            svg(width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg')
+                              rect(width='48' height='48' rx='24')
+                              path(d='M24 38C27.239 38 30.3777 36.8769 32.8815 34.8221C35.3853 32.7674 37.0991 29.908 37.731 26.7313C38.3629 23.5545 37.8737 20.257 36.3469 17.4004C34.8201 14.5439 32.35 12.3052 29.3576 11.0657C26.3651 9.82619 23.0355 9.66261 19.936 10.6028C16.8365 11.5431 14.1589 13.5289 12.3594 16.222C10.5599 18.9151 9.74994 22.1489 10.0674 25.3722C10.3849 28.5956 11.8102 31.6092 14.1005 33.8995' stroke='white' stroke-width='1.5' stroke-linecap='round')
+                              path(d='M30 21L23.902 28.3175C23.2465 29.1042 22.9187 29.4976 22.4781 29.5176C22.0375 29.5375 21.6755 29.1755 20.9514 28.4514L18 25.5' stroke='white' stroke-width='1.5' stroke-linecap='round')
+
+                        div
+                          span Вручен
+                          
+                          
+
+
+                     
+
+                    
+
+                .tracking__info-col
+                  .tracking__info-recipient
+                    .tracking__info-recipient-block
+                      .tracking__info-recipient-message
+                        .tracking__info-recipient-message-icon.icon
+                          svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+                            path(fill-rule='evenodd' clip-rule='evenodd' d='M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21H16.5C17.8978 21 18.5967 21 19.1481 20.7716C19.8831 20.4672 20.4672 19.8831 20.7716 19.1481C21 18.5967 21 17.8978 21 16.5V12C21 7.02944 16.9706 3 12 3ZM8 11C8 10.4477 8.44772 10 9 10H15C15.5523 10 16 10.4477 16 11C16 11.5523 15.5523 12 15 12H9C8.44772 12 8 11.5523 8 11ZM11 15C11 14.4477 11.4477 14 12 14H15C15.5523 14 16 14.4477 16 15C16 15.5523 15.5523 16 15 16H12C11.4477 16 11 15.5523 11 15Z' fill='#009688')
+
+                        .tracking__info-recipient-message-desc
+                          p Мы уведомим о поступлении заказа в пункт выдачи в мобильном приложении, мессенджере или по смс
+
+                      .tracking__info-recipient-personal-information
+                        .tracking__info-recipient-personal-information-item
+                          span Получатель
+                          p Н.Ш.
+                        
+                        .tracking__info-recipient-personal-information-item
+                          span Адрес пункта выдачи
+                          p ул. Раззакова, 22
+                        
+                        .tracking__info-recipient-personal-information-item
+                          p Пн-Пт 10:00:00-20:00:00 <br> Сб-Вс 10:00:00-18:00:00
+
+                        .tracking__info-recipient-personal-information-item
+                          a(href="#") Посмотреть на карте
+
+                        p Поступление в пункт выдачи до: 04.05.2023
+                    
+                    .tracking__info-recipient-block
+                      
+                      .tracking__info-recipient-personal-information
+                        .tracking__info-recipient-personal-information-item
+                          p Вручение по паспорту
+                          span При получении предъявите оригинал паспорта (для организаций дополнительно доверенность)
+                        
+                        .tracking__info-recipient-personal-information-item
+                          p Как получать без паспорта?
+                          span Чтобы получать заказы быстро и просто по коду из уведомления необходимо заполнить заявление. Это займет пару минут.
+                        
+                        
+                        .tracking__info-recipient-personal-information-item
+                          a(href="#") Запонить
+
+        
+    include includes/seo-text
+    include includes/footer
+
+
+  include includes/scripts
+  

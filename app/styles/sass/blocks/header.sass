@@ -1,0 +1,235 @@
+.header
+  padding: rem(25) 0
+
+  @include xs
+    padding: rem(10) 0
+
+
+  &__flex-wrap
+    @include fww-jfcsb
+
+  &__flex-col
+    @include aic
+
+    &:first-child,
+    &:nth-child(2)
+      @include aife
+
+      @include md
+        align-items: center
+    
+    &:nth-child(3),
+    &:nth-child(4)
+      margin-top: rem(20)  
+      
+      @include md
+        margin-top: 0
+
+    &--btn
+      @include md
+        display: none  
+
+    
+
+  &__logo
+    max-width: rem(287)
+    width: 100%
+    @include aic-jcc
+    margin-bottom: rem(5)
+
+    @include lg
+      max-width: rem(200)
+
+    @include xs
+      max-width: rem(150)
+
+    
+    svg
+      width: 100%
+    
+  &__user-panel
+    @include aic
+    
+    &-item
+      @include aic
+    
+      &:first-child
+        margin-right: rem(40)
+
+      &--phone
+        @include sm
+          display: none  
+
+    &-icon
+      margin-right: rem(4)
+
+    &-label
+      color: $textcolor
+      font-size: rem(14)
+      margin-bottom: rem(1)
+
+    a
+      color: $sc
+      font-weight: 500
+      
+      @include lg
+        font-size: rem(15)
+
+      &:hover
+        color: $mc
+
+    .lang
+
+      &__lang
+        position: relative
+        display: inline-block
+        cursor: pointer
+
+        &:hover
+          .lang__dropdown
+            opacity: 1
+            pointer-events: inherit
+            transform: none
+
+          .lang__selected
+            svg
+              transform: rotate(180deg)
+      
+      .header__user-panel-label
+        @include xs
+          display: none      
+
+      &__selected
+        color: $sc
+        font-weight: 500
+        @include aifs
+        
+        @include lg
+          font-size: rem(15)
+
+        svg
+          transition: $tr
+
+      &__dropdown
+        display: flex
+        flex-direction: column
+        position: absolute
+        border-radius: rem(3)
+        background-color: $wc
+        box-shadow: 4px 0px 8px 0px rgba(0, 150, 136, 0.4)
+        transition: $tr
+        transform: translateY(-20px)
+        opacity: 0
+        pointer-events: none
+
+        a
+          font-weight: 500
+          padding: rem(7)
+          background: $wc
+          
+          @include lg
+            font-size: rem(15)
+          
+          &:hover
+            background-color: rgba($sc, .1)
+
+  &__nav
+    padding: 0
+    @include aic
+
+    @include md
+      display: none
+
+    li
+      margin-right: rem(40)
+      list-style: none
+      
+      @include lg
+        margin-right: rem(20)
+
+      &:last-child
+        margin-right: rem(15)
+
+      a
+        font-weight: 500
+        position: relative
+        display: inline-block
+        color: $sc
+        padding-bottom: rem(1)
+        
+        @include lg
+          font-size: rem(14)
+
+        &:after
+          position: absolute
+          content: ''
+          width: 0
+          height: rem(2)
+          background: $mc
+          transition: $tr
+          left: 0
+          top: 100%
+          color: $sc
+
+        &:hover
+          color: $mc
+
+          &:after
+            width: 100%
+
+      &.active
+        a
+          
+          &:after
+           width: 100% 
+
+
+  &__log
+    @include aic
+
+    .icon
+      margin-left: rem(10)
+      
+    
+    &-name
+      color: $mc
+      
+
+.hamburger
+  display: none
+  margin-left: rem(20)
+  z-index: 5
+
+  @include md
+    display: block
+  
+  @include xs
+    margin-left: rem(10)
+
+  .line
+    width: rem(30)
+    height: rem(2)
+    background: $mc
+    display: block
+    margin: rem(6) auto
+    transition: all 0.3s ease-in-out
+
+  &:hover
+    cursor: pointer
+
+  &.is-active
+    transition: all 0.3s ease-in-out
+    transform: rotate(45deg)
+
+    .line
+      &:nth-child(2)
+        width: 0
+
+      &:nth-child(1), &:nth-child(3)
+        transition-delay: 0.3s
+
+      &:nth-child(1)
+        transform: translateY(8px)
+
+      &:nth-child(3)
+        transform: translateY(-8px) rotate(90deg)

@@ -1,0 +1,40 @@
+extends layouts/main
+block title
+  | Авторизация по номеру мобильного телефона
+block main
+  .wrapper
+    .content
+      include includes/header-modify
+
+        
+      .accounting.accounting--login-by-phone 
+        .window 
+          h3.title.title--h3 Вход в личный кабинет
+          form(action="") 
+            .window-input-wrap 
+              label(for="number") Номер мобильного телефона 
+              .input
+                input#number(type="text")
+            button.btn(type="submit") Отправить код на телефон
+            a(href="#").window-link Зарегистрироваться
+
+          
+          p.window-agree Авторизируясь, вы соглашаетесь с 
+            a(href="#") Политикой в отношении обработки персональных данных
+
+
+
+
+
+
+              
+
+              
+              
+          
+
+    include includes/seo-text
+    include includes/footer
+
+
+  include includes/scripts 

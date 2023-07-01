@@ -1,0 +1,51 @@
+.advantages
+  margin-top: rem(110)
+  
+  @include lg
+    margin-top: rem(90)
+
+  @include md
+    margin-top: rem(70)
+
+  @include sm
+    margin-top: rem(50)
+  
+  @include xs
+    margin-top: rem(40)
+
+  &__slider
+
+    &-item
+      padding: rem(40) rem(20)
+
+      @media (max-width: 1599px)
+        padding: rem(30) rem(15)
+        border-radius: rem(30)
+
+      @include lg  
+        padding: rem(25) rem(10)
+
+      @include md  
+        padding: rem(20) rem(10)
+
+    &-icon
+      min-width: rem(60)
+      max-width: rem(60)
+      height: rem(60)
+      margin-bottom: rem(20)
+
+      @media (max-width: 1599px)
+        min-width: rem(40)
+        max-width: rem(40)
+        height: rem(40)
+        margin-bottom: rem(15)
+
+    &-name
+      font-size: rem(15)
+      font-weight: 500
+      color: #4A4A4A
+      line-height: rem(26)   
+      
+      @media (max-width: 1599px)
+        font-size: rem(13)
+        line-height: normal

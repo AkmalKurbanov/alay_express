@@ -1,0 +1,17 @@
+.services 
+  .container
+    .title-wrap
+        h2.title
+          | У нас есть 
+          span всё
+          |, <br> что нужно!
+      
+        .text 
+          p Мы относимся к клиентам как КОРОЛЯМ. Все,<br> что вам нужно, все есть у нас. Доставляйте с <br> Alay Express гарантированно быстро!
+
+    .services__wrap.typical-block-wrap
+
+      each servce in services
+        .services__item.typical-block(class="typical-block--"+servce.size+" typical-block--"+servce.hover)
+          .services__title=servce.title
+          .services__desc=servce.desc

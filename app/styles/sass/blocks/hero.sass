@@ -1,0 +1,249 @@
+.hero
+  margin-top: rem(10)
+  padding-bottom: rem(100)
+  margin-bottom: rem(80)
+
+  @include lg
+    padding: 0
+    margin-bottom: rem(60)
+
+  @include md
+    margin-bottom: rem(40)
+
+  @include sm
+    margin-bottom: rem(30)
+
+
+  
+  &__bottom
+    margin-top: rem(40)
+    position: relative
+    
+    @include sm
+      display: flex
+      flex-direction: column
+
+    @include xs
+      margin-top: rem(20)
+
+
+    .btn
+      z-index: 1
+      position: relative
+
+      @include sm
+        order: 3
+    
+  &__advantages
+    margin-top: rem(70)
+    
+    @include lg
+      margin-top: rem(20)
+
+    @include sm
+      order: 2
+      margin: 0
+      @include jfcsb
+      
+
+    &-item
+      margin-bottom: rem(24)
+
+      &:last-child
+        margin-bottom: 0
+
+      
+
+    
+
+  &__effect
+    position: absolute
+    transition: $tr
+    opacity: 0
+    transform: translateY(-50px)
+    top: 0
+    width: 100%
+
+    @media (max-width: 1350px)
+      max-width: rem(1150)
+      left: 50%
+      transform: translateX(-50%)
+
+    @include lg
+      max-width: rem(775) 
+      right: 0
+      left: auto
+
+    @include md
+      max-width: rem(500) 
+      top: auto
+      bottom: 0
+    
+    @include sm
+      position: relative
+      order: 1
+      margin: rem(30) auto
+
+    @include xs
+      max-width: rem(345)  
+
+    @media (max-width: 374.98px)
+      max-width: rem(270)    
+
+    &-img 
+      position: absolute
+      max-width: rem(876)
+      width: 100%
+      top: 0
+      right: 0
+      z-index: 2  
+      opacity: 0
+      transform: translateY(-50px)
+      transition: all 1s
+      transition-delay: .5s
+      
+      @media (max-width: 1350px)
+        max-width: rem(774)
+
+
+      @include lg
+        max-width: rem(550)
+
+      @include md
+        max-width: rem(400)
+      
+      @include xs
+        max-width: rem(290)
+      
+      @media (max-width: 374.98px)
+        max-width: rem(220)    
+   
+
+    svg
+      width: 100%
+
+    path
+      fill: none
+      stroke-dasharray: 4155.41259765625
+      stroke-dashoffset: 4155.41259765625
+      
+    &-line
+      stroke-width: 3!important
+      
+
+    @keyframes strokeOffset
+      to
+        stroke-dashoffset: 0
+
+    @keyframes line
+      to
+        stroke-dashoffset: 0
+
+    &-runner
+      .arrow-runner
+        offset-path: path('M10 463.743C310.384 500.623 446.486 450.822 640.5 255.695C773.384 128.134 877.961 64.3695 1011.53 44.237')
+        top: 0
+        left: 0
+        position: absolute
+        opacity: 0
+
+        @media (max-width: 1350px)
+          offset-path: path('M9.04077 419.265C280.614 452.607 403.663 407.583 579.068 231.171C699.207 115.844 793.754 58.1957 914.512 39.9941')
+          
+
+        @include lg
+          offset-path: path('M6.09277 282.548C189.11 305.018 272.034 274.675 390.242 155.789C471.205 78.0691 534.921 39.2188 616.302 26.9526')
+          width: rem(21)
+          height: rem(21)
+
+        @include md  
+          offset-path: path('M3.93091 182.289C122.006 196.786 175.506 177.21 251.769 100.509C304.003 50.3671 345.111 25.3025 397.614 17.3887')
+          width: rem(15)
+          height: rem(15)
+
+        @include xs  
+          offset-path: path('M2.71216 125.779C84.1842 135.782 121.099 122.275 173.72 69.3512C209.762 34.7533 238.126 17.4587 274.354 11.9982')
+
+        @media (max-width: 374.98px)
+          offset-path: path('M2.12256 98.436C65.8833 106.264 94.7729 95.6934 135.955 54.2749C164.162 27.1983 186.36 13.6634 214.712 9.38995')
+      
+        path
+          fill: $wc
+        
+
+      @keyframes arrow-runner 
+        0% 
+          offset-distance: 0%
+          opacity: 1
+
+        100%  
+          offset-distance: 100%
+          opacity: 1
+
+      .circle-runner
+        offset-path: path('M10 463.743C310.384 500.623 446.486 450.822 640.5 255.695C847.252 57.2259 985.477 13.1926 1271 47.6461')
+        top: 0
+        left: 0
+        position: absolute
+        
+        @media (max-width: 1350px)
+          offset-path: path('M9.04077 419.264C280.614 452.607 403.663 407.583 579.068 231.171C765.99 51.7373 890.958 11.9273 1149.1 43.0763')
+          width: rem(17.5)
+          height: rem(17.5)
+
+        @include lg
+          offset-path: path('M6.09277 282.548C189.11 305.018 272.034 274.675 390.242 155.789C516.211 34.8664 600.428 8.03795 774.391 29.0297')
+          width: rem(12)
+          height: rem(12)
+
+        @include md  
+          offset-path: path('M3.93091 182.289C122.006 196.786 175.506 177.21 251.769 100.509C333.039 22.4945 387.373 5.18578 499.607 18.7288')  
+          width: rem(9)
+          height: rem(9)
+
+        @include xs
+          offset-path: path('M2.71216 125.779C84.1842 135.782 121.099 122.275 173.72 69.3512C229.797 15.5212 267.287 3.57817 344.729 12.9229')  
+          width: rem(7)
+          height: rem(7)
+
+        @media (max-width: 374.98px)
+          offset-path: path('M2.12256 98.436C65.8833 106.264 94.7729 95.6933 135.955 54.2749C179.841 12.147 209.181 2.8003 269.788 10.1135')
+          width: rem(6)
+          height: rem(6)
+
+      @keyframes circle-runner 
+        0% 
+          offset-distance: 0%
+        
+        100%  
+          offset-distance: 100%
+
+    &.active
+      opacity: 1
+      transform: translateY(0)
+      
+      @media (max-width: 1350px)
+        transform: translateX(-50%)
+
+      @include lg
+        transform: translateX(0)
+
+      .hero__effect-img
+        opacity: 1
+        transform: none
+
+      .arrow-runner
+        animation: arrow-runner 2.7s linear forwards
+        animation-delay: 1s
+
+        
+
+      .circle-runner
+        animation: arrow-runner .85s linear forwards
+
+      .hero__effect-line
+        animation: line 10s linear forwards!important
+        animation-delay: 1s!important
+
+      path
+        animation: strokeOffset 2.5s linear forwards

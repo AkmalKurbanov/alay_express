@@ -1,0 +1,66 @@
+.services
+  margin-top: rem(80)
+
+  &__wrap
+    margin-top: rem(60)
+
+  &__item
+    padding: rem(40)  
+
+    @media (max-width: 1599px)
+      padding: rem(35) 
+
+    @include lg
+      padding: rem(30) 
+      width: calc( 50% - 10px )    
+
+    @include md
+      padding: rem(25)  
+
+    @include sm
+      padding: rem(20)  
+
+    @include xs
+      padding: rem(15)  
+      width: 100%
+      min-height: rem(170)
+
+    &:last-child
+      @include xs
+        margin-bottom: 0
+      
+    
+    &:hover
+      *
+        color: $wc
+
+  &__title
+    color: $bc
+    font-weight: 500
+    font-size: rem(24)
+    line-height: rem(23)
+    margin-bottom: rem(24)
+
+    @include md
+      font-size: rem(20)
+      line-height: rem(20)
+      margin-bottom: rem(20)
+    
+    @include sm
+      font-size: rem(18)
+      line-height: rem(18)
+      margin-bottom: rem(18)
+
+  &__desc
+    font-weight: 500
+    color: $bc  
+    line-height: rem(23)        
+    
+    @include md
+      font-size: rem(15)
+      line-height: rem(21)        
+    
+    @include sm
+      font-size: rem(14)
+      line-height: rem(14)
+      

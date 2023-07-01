@@ -1,0 +1,181 @@
+.work
+  border-radius: rem(40) rem(40) 0 0
+  
+  .container
+    padding: rem(120) rem(15)
+    position: relative
+
+    @include lg
+      padding: rem(100) rem(15)
+
+    @include md
+      padding: rem(80) rem(15)
+
+    @include sm
+      padding: rem(60) rem(15)
+
+    @include xs
+      padding: rem(40) rem(15)
+  
+  &__logo
+    width: rem(200)
+    @include aic-jcc
+    position: absolute
+    top: rem(-100) 
+    right: rem(120)
+    background: $wc
+    border-radius: rem(15)
+    overflow: hidden
+    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.15)
+    
+    @include lg
+      width: rem(150)
+      top: rem(-75) 
+      right: rem(100)
+
+    @include md
+      width: rem(125)
+      top: rem(-62.5) 
+      right: rem(50)
+
+    @include xs
+      width: rem(70)
+      top: rem(-35) 
+      right: rem(20)
+      border-radius: rem(10) 
+
+
+  &__wrap
+    display: flex
+    justify-content: space-between
+    min-height: rem(380)
+    margin-top: rem(25)
+
+    @include lg
+      min-height: rem(330)
+
+    @include sm
+      flex-wrap: wrap
+      justify-content: center
+
+  &__item
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    width: calc( 20% - 25px )
+    position: relative
+    z-index: 2
+
+    @include lg
+      width: calc( 20% - 5px )
+
+    @include sm
+      width: 33.33%
+      margin-bottom: rem(20)
+      align-items: center
+
+    @media (max-width: 460px)
+      width: calc( 50% - 5px )
+
+    .work__item-img
+      margin-bottom: rem(10)
+
+    &:nth-child(2n)
+      flex-direction: column-reverse
+      align-items: flex-start
+      margin-top: rem(10)
+      margin-bottom: 0
+
+      @include sm
+        flex-direction: column
+        margin-top: 0
+        align-items: center
+
+  &__item-img
+    @include aic-jcc
+    max-width: rem(200)
+    width: 100%
+
+    @include lg
+      max-width: rem(150)
+
+    @include sm
+      min-height: rem(150)
+      align-items: flex-start
+
+  &__item-desc
+    @include aic
+
+    .title
+      color: $mc
+
+      @include lg
+        font-size: rem(16)
+        line-height: normal
+
+      @include sm
+        font-size: rem(15)
+
+      @include xs
+        font-size: rem(14)
+
+    span
+      color: #FEB707
+      font-size: rem(40)
+      line-height: rem(45)
+      font-weight: 700
+      margin-right: rem(15)
+
+      @include lg
+        font-size: rem(25)
+        line-height: rem(30)
+        margin-right: rem(10)
+
+      @include md
+        font-size: rem(20)
+        line-height: normal
+        margin-right: rem(8)
+
+      @include sm
+        font-size: rem(18)
+        margin-right: rem(6)
+
+      @include xs
+        font-size: rem(16)
+        margin-right: rem(5)
+
+  &__elem
+    position: absolute
+    width: calc( 100% - 100px )
+    top: 45%
+    left: 50%
+    transform: translateY(-50%)
+    transform: translateX(-50%)
+
+    @include md
+      top: 40%
+
+    @include sm
+      display: none
+
+    .dashed
+      stroke-dasharray: 10
+
+    .path
+      stroke-dasharray: 1098.128662109375
+      stroke-dashoffset: 1098.128662109375
+
+    @keyframes dash
+      from
+        stroke-dashoffset: 1098.128662109375
+      to
+        stroke-dashoffset: 0
+
+    svg
+      width: 100%
+
+  &.aos-animate
+    .work__elem
+      .path
+        animation: dash 2s linear alternate forwards
+        animation-delay: 1s

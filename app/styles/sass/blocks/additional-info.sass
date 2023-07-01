@@ -1,0 +1,146 @@
+.additional-info
+  margin-top: rem(120)
+
+  @include lg
+    margin-top: rem(100)
+ 
+  @include md
+    margin-top: rem(80)
+ 
+  @include sm
+    margin-top: rem(60)
+  
+  @include xs
+    margin-top: rem(40)
+
+  &__wrap
+    background: #F8F8F8
+    border-radius: rem(40)
+
+    @include lg
+      border-radius: rem(30)
+    @include md
+      border-radius: rem(25)
+    @include sm
+      border-radius: rem(20)
+    @include xs
+      border-radius: rem(15)
+
+  &__img
+    border-radius: rem(40)
+    overflow: hidden
+    @include aic-jcc
+
+    @include lg
+      border-radius: rem(30)
+    @include md
+      border-radius: rem(25)
+    @include sm
+      border-radius: rem(20)
+    @include xs
+      border-radius: rem(15)
+
+  &__desc
+    @include jfcsb
+    padding: rem(40)
+      
+    @media (max-width: 1599px) 
+      padding: rem(35)
+    
+    @include lg
+      padding: rem(30)
+  
+    @include md
+      flex-direction: column
+      padding: rem(25)
+
+    @include sm
+      padding: rem(20)
+      
+    @include xs
+      padding: rem(15)
+
+    &-col
+      @include md
+        margin-bottom: rem(20)
+
+      &:first-child
+        width: calc( 58% - 10px )
+
+        @include md
+          width: 100%
+
+        .title
+          margin-bottom: rem(40)
+          
+          @media (max-width: 1599px) 
+            font-size: rem(55)
+            margin-bottom: rem(35)
+
+          @include lg  
+            font-size: rem(40)
+            line-height: rem(40)
+            margin-bottom: rem(25)
+
+          @include md  
+            font-size: rem(35)
+            line-height: rem(35)
+            margin-bottom: rem(20)
+
+          @include sm  
+            font-size: rem(30)
+            line-height: rem(30)
+            
+          @include md  
+            font-size: rem(25)
+            line-height: rem(25)
+            
+
+      &:last-child
+        width: calc( 42% - 10px )
+
+        @include md
+          width: 100%
+
+  &__black-text
+    color: $bc
+    font-weight: 600
+
+    a
+      color: $mc
+      text-decoration: underline
+
+      &:hover
+        text-decoration: none
+
+  ul
+    margin-top: rem(40)
+    padding-left: rem(30)
+    
+    @include md
+      margin-top: rem(30)
+
+    li
+      font-size: rem(18)
+      line-height: rem(26)
+
+      @include lg
+        font-size: rem(14)
+        line-height: rem(20)
+
+  &--without-cols
+    background: none
+
+    p 
+      font-size: rem(18)
+      line-height: rem(28)
+      color: $bc
+      a
+        color: $mc
+        text-decoration: underline
+
+    .additional-info__wrap
+      background: none
+
+      .additional-info__img
+        margin: rem(24) 0

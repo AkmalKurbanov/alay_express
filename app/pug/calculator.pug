@@ -1,0 +1,163 @@
+extends layouts/main
+block title
+  | Калькулятор
+block main
+  .wrapper
+    .content
+    
+        include includes/login-popup
+        include includes/mmenu
+        include includes/header
+
+        .send-parcel
+          .container 
+            .send-parcel__tabs
+              a(href="#").send-parcel__tab.send-parcel__tab_active Физ-лицо
+              a(href="#").send-parcel__tab Интернет магазин
+            form(action="") 
+              .send-parcel__wrap 
+
+                .send-parcel__col
+                  h3.title.title--h3 Отследить отправление 
+
+                  .send-parcel__input-wrap
+                    .input
+                      label.label(for='from-where') Откуда
+                      input#from-where(type='text')
+
+                    .btn-switch
+                      .icon
+                        svg(width='25' height='24' viewBox='0 0 25 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+                          rect(x='24.3334' width='24' height='24' rx='8' transform='rotate(90 24.3334 0)' fill='#009688')
+                          path(d='M20.6667 9L21.0087 8.63523L21.3978 9L21.0087 9.36477L20.6667 9ZM12.6667 9.5C12.3906 9.5 12.1667 9.27614 12.1667 9C12.1667 8.72386 12.3906 8.5 12.6667 8.5V9.5ZM17.8087 5.63523L21.0087 8.63523L20.3248 9.36477L17.1248 6.36477L17.8087 5.63523ZM21.0087 9.36477L17.8087 12.3648L17.1248 11.6352L20.3248 8.63523L21.0087 9.36477ZM20.6667 9.5H12.6667V8.5H20.6667V9.5Z' fill='white')
+                          path(d='M3.66675 15L3.3342 14.6266L2.91497 15L3.3342 15.3734L3.66675 15ZM19.6667 15.5C19.9429 15.5 20.1667 15.2761 20.1667 15C20.1667 14.7239 19.9429 14.5 19.6667 14.5L19.6667 15.5ZM6.70263 11.6266L3.3342 14.6266L3.99929 15.3734L7.36771 12.3734L6.70263 11.6266ZM3.3342 15.3734L6.70262 18.3734L7.36771 17.6266L3.99929 14.6266L3.3342 15.3734ZM3.66675 15.5L19.6667 15.5L19.6667 14.5L3.66675 14.5L3.66675 15.5Z' fill='white')
+
+
+                    .input
+                      label.label(for='from-where') Куда
+                      input#from-where(type='text')
+
+                  h3.title.title--h3 Информация о посылке
+                  .send-parcel__input-wrap
+
+                    .send-parcel__input-wrap-col
+                      .input
+                        label.label(for='price') Объявленная ценность
+                        input#price(type='text')
+
+                      p От 0 до 200 000 ₽, влияет на стоимость доставки и размер компенсации за утерю или повреждение посылки. Указывайте только реальную стоимость.
+                    
+                    .send-parcel__input-wrap-col
+                      .select
+                        label.label Габариты
+                        .select__selected
+                        .select__dropdown
+                          .tab_select
+                            ul.tabs_select
+                              li
+                                a(href='#') Точные размеры
+                              li
+                                a(href='#') Примерно
+
+                            .tab_content_select
+                              .tabs_item_select
+                                .select__list
+                                  each size,index in sizes
+                                    label(for="size"+(index+1)).select__list-item
+                                      input(type="radio" value="size"+(index+1) name="размер" id="size"+(index+1)) 
+                                      .select__list-item-img 
+                                        img(src="images/dist/"+size.img+".webp", alt="")
+                                      .select__list-item-desc 
+                                        h2(data-title=size.title)=size.title 
+                                        span(data-size=size.size)=size.size 
+                                        p=size.desc 
+                              
+                              .tabs_item_select
+                                .input-wrap
+                                  each place in['Длина, см','Ширина, см', 'Высота, см','Вес, кг']
+                                    .input
+                                      input(type="text")
+                                      label.label=place  
+
+                        .icon 
+                          svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+                            path(d='M17 10L12 15L7 10' stroke='#222222')
+
+                      p Максимальные размеры посылки для услуги СберПосылка: отделения Сбера - 60×60×60 см, Постамат - 60×36×36см, вес до 10кг. Обратите внимание — доставка посылок максимального размера возможна не во все постаматы.
+
+                      p Максимальные размеры посылки для услуги СберКурьер (Д+Ш+В) — не более 300 см, максимальная длина одной стороны — 150 см, вес до 10 кг.
+
+                  .send-parcel__package-info-wrap
+                    h3.title.title--h3 Упаковка в отделениях Alay Express
+                    .send-parcel__package-info.typical-block
+                      .send-parcel__package-info-col
+                        .send-parcel__package-info-title Фирменная коробка:
+                        .send-parcel__package-info-desc Оплачивается в пункте приема
+                        .send-parcel__package-info-sizes
+                          .send-parcel__package-info-sizes-item
+                            p 
+                              i Размер:
+                              b 26 × 18 × 9
+                            p 
+                              i Цена:
+                              |120 
+                              u C
+                              span S
+                          .send-parcel__package-info-sizes-item
+                            p 
+                              b 30 × 23 × 16
+                            p 140 
+                              u C
+                              span M
+                          .send-parcel__package-info-sizes-item
+                            p 
+                              b 42 × 36 × 27
+                            p 255 
+                              u C
+                              span XL
+                        .send-parcel__package-info-title Бесплатная упаковка:
+                        .send-parcel__package-info-desc Курьерский пакет, картонный конверт, собственная упаковка
+
+                      .send-parcel__package-info-col
+                      .send-parcel__package-info-img 
+                        img(src="images/dist/package-info.webp", alt="")
+
+                .send-parcel__col 
+
+                  h3.title.title--h3 Стоимость доставки
+
+                  .send-parcel__kind
+                    label(for="package1").send-parcel__kind-item.typical-block.active
+                      .send-parcel__kind-item-top
+                        .send-parcel__kind-item-radio
+                          input#package1(type="radio" name="kind" value="276" checked) 
+                          .send-parcel__kind-item-title Alay Посылка
+                        .send-parcel__kind-item-price 276 C
+
+                      .send-parcel__kind-item-bottom
+                        p Доставка от пункта приема до пункта выдачи, 1-2 рабочих дня
+                    
+                        span *Без учета дня приема
+                    
+                    label(for="package2").send-parcel__kind-item.typical-block
+                      .send-parcel__kind-item-top
+                        .send-parcel__kind-item-radio
+                          input#package2(type="radio" name="kind" value="676.80") 
+                          .send-parcel__kind-item-title Alay Курьер
+                        .send-parcel__kind-item-price 676.80 C
+
+                      .send-parcel__kind-item-bottom
+                        p Курьерская доставка от двери до двери, 1-2 рабочих дня
+                    
+                        span *Без учета дня приема
+
+                  button.btn(type="submit") Оформить посылку   
+                    
+        
+        
+    include includes/seo-text
+    include includes/footer
+
+
+  include includes/scripts
+  

@@ -1,0 +1,418 @@
+.tracking
+  margin-bottom: rem(120)
+
+  @include lg
+    margin-bottom: rem(100)
+ 
+  @include md
+    margin-bottom: rem(80)
+ 
+  @include sm
+    margin-bottom: rem(60)
+  
+  @include xs
+    margin-bottom: rem(40)
+
+  .title
+    margin-bottom: rem(30)
+
+  .tracking-block
+    padding: rem(24)
+    border-radius: rem(24)
+    background: #F8F8F8
+
+    @include lg
+      padding: rem(24) rem(22)
+      border-radius: rem(22)
+    @include md
+      padding: rem(24) rem(20)
+      border-radius: rem(20)
+    @include sm
+      padding: rem(24) rem(17)
+      border-radius: rem(17)
+    @include xs
+      padding: rem(24) rem(15)
+      border-radius: rem(15)
+
+
+  &__form
+    @include aic
+    margin-bottom: rem(40)
+
+    @include md
+      flex-wrap: wrap
+      justify-content: space-between
+
+    .input,
+    .btn
+      margin-right: rem(20)
+   
+      @include lg
+        margin-right: rem(15)
+
+      @include md
+        margin-right: 0  
+
+    .input
+      @include md
+        margin-bottom: rem(20)
+
+    .btn
+      max-width: rem(205)
+      min-width: rem(205)
+
+      @include md
+        width: 100% 
+        max-width: calc(50% - 5px)
+        min-width: auto
+
+      @include xs
+        max-width: 100%  
+        margin-bottom: rem(20)
+
+
+  &__additional-info
+    padding: rem(10)
+    background: $wc
+    border: rem(1) solid #E3E3E3
+    border-radius: rem(8)
+    @include aic
+    display: inline-flex
+    max-width: rem(250)
+    min-width: rem(250)
+
+    @include md
+      width: 100%
+      max-width: calc(50% - 5px)
+      min-width: auto
+
+    @include xs
+        max-width: 100%
+
+    &-icon
+      margin-right: rem(8)
+      min-width: rem(24)
+      max-width: rem(24)
+      width: 100%
+      height: rem(24)
+
+    &-desc
+      p
+        color: $bc
+        font-size: rem(12)
+        font-weight: 500
+        a
+          color: $bc
+          text-decoration: underline
+          &:hover
+            color: $mc
+
+  &__info
+    &-top
+      @include aic-jfcsb
+      margin-bottom: rem(20)
+
+      @media (max-width: 479px)
+        flex-direction: column
+
+    &-number,
+    &-city
+      color: $bc
+      font-size: rem(18)
+      font-weight: 500
+
+      @include xs
+        font-size: rem(15)
+        margin-bottom: rem(10)
+
+
+    &-status
+      @include aic
+      color: $mc
+      font-size: rem(15)
+      font-weight: 500
+
+      &-icon
+        max-width: rem(32)
+        min-width: rem(32)
+        margin-right: rem(8)
+
+    &-way
+
+      &-top
+        @include aic-jfcsb
+        margin-bottom: rem(35)
+
+        
+
+
+      &-point
+        font-size: rem(24)
+        font-weight: 600
+        color: $bc
+
+        @include xs
+          font-size: rem(18)
+
+
+      &-line
+        width: 100%
+        height: rem(2)
+        background: $textcolor
+        position: relative
+        margin-bottom: rem(60)
+
+        &:before,
+        &:after
+          position: absolute
+          content: ''
+          width: rem(10)
+          height: rem(10)
+          border-radius: 100%
+          border: rem(1) solid $mc
+          top: 50%
+          transform: translateY(-50%)
+          background: $wc
+          z-index: 1
+
+        &:before
+          left: 0
+        &:after
+          right: 0
+
+      &-marker
+        background: $mc
+        position: relative
+        height: 100%
+
+        span
+          width: rem(40)
+          height: rem(40)
+          @include aic-jcc
+          position: absolute
+          top: 50%
+          transform: translateY(-50%)
+          right: 0
+          z-index: 2
+          
+          @include xs
+            width: rem(30)
+            height: rem(30)
+          
+          svg
+            width: 100%
+            height: 100%
+
+      
+    &-col-wrap
+      @include jfcsb
+
+      @include sm
+        flex-direction: column
+
+    &-col
+      &:last-child
+        max-width: rem(400)
+        min-width: rem(400)
+        margin-left: rem(40)
+        
+        @include md
+          margin-left: rem(20)
+
+        @include sm
+          max-width: 100%
+          min-width: 100%
+          margin-left: 0
+
+    
+
+    &-status-item
+      @include aic-jfcsb
+      margin-bottom: rem(40)
+
+      @include xs
+        margin-bottom: rem(20)
+
+      &-left
+        @include aic
+
+      &-icon
+        max-width: rem(40)
+        min-width: rem(40)
+        height: rem(40)
+        margin-right: rem(24)
+        position: relative
+
+        @include xs
+          max-width: rem(30)
+          min-width: rem(30)
+          height: rem(30)
+          margin-right: rem(10)
+
+        svg
+          fill: $textcolor
+
+        &:before
+          position: absolute
+          content: ''
+          width: rem(1)
+          height: 100%
+          background: $textcolor
+          bottom: 100%
+          z-index: 0
+
+      span
+        font-size: rem(20)
+        font-weight: 600
+
+        @include xs
+          font-size: rem(16)
+        
+
+      &-right
+        span
+          color: $bc
+          font-size: rem(12)
+          font-weight: 500
+
+      &-dropdown-trigger
+        @include aic
+        cursor: pointer
+        position: relative
+
+        span 
+          color: $mc!important
+          font-size: rem(12)
+
+        .icon
+          width: rem(17)
+          height: rem(17)
+          transition: $tr
+
+          svg
+            width: 100%
+            height: 100%
+            fill: none!important
+
+        &.open    
+          .tracking__info-status-item-dropdown
+            opacity: 1
+            pointer-events: inherit
+            transform: none
+          .icon
+            transform: rotate(180deg)  
+      
+      &-dropdown
+        position: absolute
+        border-radius: rem(12)
+        background: $wc
+        padding: rem(12)
+        top: 100%
+        left: 0
+        min-width: rem(250)
+        opacity: 0
+        pointer-events: none
+        transform: translateY(-20px)
+        transition: $tr
+        border: rem(1) solid $textcolor
+
+        p
+          font-size: rem(12)
+          color: $bc
+
+      &:first-child
+        .icon
+          &:before
+            display: none
+
+      &.completed
+        .icon      
+            &:before
+              background: $mc
+            svg
+              fill: $mc
+
+        .tracking__info-status-item-left      
+          span
+            color: $bc      
+         
+
+
+    &-recipient
+      &-block
+        background: $wc
+        border-radius: rem(20)
+        padding: rem(24)
+        margin-bottom: rem(10)
+
+        @include lg
+          padding: rem(22) rem(22)
+
+        @include md
+          padding: rem(22) rem(20)
+
+        @include sm
+          padding: rem(22) rem(18)
+
+        @include xs
+          padding: rem(22) rem(15)
+        
+        &:last-child
+          margin-bottom: 0
+          
+          .tracking__info-recipient-personal-information-item
+            margin-bottom: rem(24)
+            span
+              font-size: rem(12)
+               line-height: rem(14)
+            &:last-child
+              margin-bottom: 0      
+
+
+      &-message  
+        border: rem(1) dashed $textcolor  
+        border-radius: rem(20)
+        padding: rem(12)
+        display: flex
+        margin-bottom: rem(10)
+
+        &-icon
+          margin-right: rem(10)
+          min-width: rem(24)
+          max-width: rem(24)
+
+        &-desc
+          p 
+            color: $bc
+            font-size: rem(15)
+            line-height: rem(18)
+
+            @include xs
+              font-size: rem(13)
+              line-height: rem(13)
+
+      &-personal-information
+        span,
+        p
+          margin-bottom: rem(5)
+
+        span
+          font-weight: 500
+          font-size: rem(13)
+
+        p   
+          font-size: rem(15)
+          color: $bc  
+        
+        a
+          font-size: rem(15)
+          color: $mc
+          text-decoration: underline
+          
+          &:hover
+            color: $bc
+
+        &-item
+          margin-bottom: rem(10)
+          &:last-child
+            margin-bottom: 0

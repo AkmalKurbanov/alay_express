@@ -1,0 +1,71 @@
+// USER VARIABLES SECTION
+
+$fontsize: 16px // Body Font Size
+$textcolor: #808080 // Text Color
+$font: 'Montserrat', sans-serif
+$font2: 'Inter', sans-serif
+$mc: #009688 
+$sc: #37474F 
+$wc: #fff
+$bc: #181818
+$tr: all .3s
+
+// Bootstrap compatible gutter variable => $gutter
+// $grid-gutter-width: 30px
+// $gutter: $grid-gutter-width
+
+// IMPORT SECTION
+
+@import 'blocks/mixins/_flex'
+@import 'blocks/mixins/_rem'
+@import 'blocks/mixins/_media'
+@import 'node_modules/normalize.css/normalize'
+@import 'node_modules/swiper/swiper-bundle.min'
+// @import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
+// @import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
+// @import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
+// @import 'node_modules/bootstrap/scss/_utilities.scss' // Optional Bootstrap Utilites
+
+// FONTS LOAD SECTION
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap')					
+// @mixin font($fname, $fstyle, $fweight, $furl)
+// 	@font-face
+// 		font-family: $fname
+// 		font-style: $fstyle
+// 		font-weight: $fweight
+// 		src: url($furl) format('woff2')
+
+// @include font('roboto-oh5', normal, 400, '../fonts/roboto-regular-webfont.woff2')
+// @include font('roboto-oh5', italic, 400, '../fonts/roboto-italic-webfont.woff2')
+// @include font('roboto-oh5', normal, 700, '../fonts/roboto-bold-webfont.woff2')
+// @include font('roboto-oh5', italic, 700, '../fonts/roboto-bolditalic-webfont.woff2')
+
+// GENERAL CSS SETTINGS
+
+
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $mc
+	color: $wc
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: $mc
+
+body
+	font-family: $font
+	font-size: $fontsize
+	color: $textcolor
+	position: relative
+	overflow-x: hidden
+
+
+

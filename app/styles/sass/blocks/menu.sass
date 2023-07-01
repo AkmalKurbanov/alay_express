@@ -1,0 +1,62 @@
+.menu
+  position: fixed
+  background: rgba($bc, .4)
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 5
+  transition: $tr
+  opacity: 0
+  pointer-events: none
+
+  &__wrap
+    padding: rem(15)
+    background: $wc 
+    max-width: calc( 100% - 50px )
+    min-width: rem(270)
+    height: 100%
+    transition: $tr
+    transform: translateX(-100%)
+    transition-delay: .2s 
+
+  .header__log
+    
+    a
+      color: $bc
+      font-weight: 500
+  
+  .header__user-panel-item
+    a
+      color: $bc
+      font-weight: 500
+
+  &__nav
+    margin: rem(20) 0
+
+    ul
+      margin: 0
+      padding: 0
+      
+      li
+        list-style: none
+        margin-bottom: rem(10)
+        
+        &:last-child
+          margin-bottom: 0 
+
+        a 
+          color: $bc
+          font-weight: 500
+          
+          &:hover
+            color: $mc
+
+  &.open
+    pointer-events: inherit
+    opacity: 1
+
+    .menu__wrap 
+      transform: none
