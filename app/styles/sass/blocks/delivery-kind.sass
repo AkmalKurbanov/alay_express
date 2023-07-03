@@ -42,50 +42,21 @@
       width: calc( 33.33% - 10px )
       min-height: rem(280)
       max-height: rem(280)
-      padding: rem(20)
+      padding: rem(10)
 
     @include sm
+      max-width: rem(350)
       width: 100%
-      align-items: flex-start
       margin: auto
       margin-bottom: rem(20)
+      min-height: rem(410)
+      padding: rem(15)
 
-    @include xs
-      max-width: 100%
-      width: 100%
-      align-items: flex-end
-      min-height: rem(270)
 
     &:last-child
       margin-bottom: 0
 
-    &-mask
-      position: absolute
-      width: 100%
-      height: 100%
-      top: 0
-      right: 0
-      bottom: 0
-      left: 0
-      overflow: hidden
-
-      @include xs
-        width: rem(180)
-        height: rem(200)
-        left: auto
-        right: 0
-        transform: none
-
-      svg
-        width: 100%
-        height: 100%
-
-        @include sm
-          height: auto
-
-        path
-          transition: $tr
-
+  
     &-img
       height: 100%
       position: absolute
@@ -98,13 +69,8 @@
       @include lg
         height: rem(250)
 
-      @include xs
-        height: rem(160)
-        width: rem(160)
-        top: rem(10)
-        left: auto
-        right: rem(10)
-        transform: none
+      @include sm
+        height: rem(420)
 
       img
         object-fit: cover
@@ -120,8 +86,8 @@
       z-index: 2
       position: relative
       min-height: rem(145)
-
-      @include xs
+      
+      @include sm
         min-height: auto
 
     &-kind
@@ -136,10 +102,14 @@
       @include md
         font-size: rem(16)
 
+      @include sm
+        font-size: rem(20)
+        margin-bottom: rem(5)
+
     &-name
       color: $mc
       font-size: rem(32)
-      font-weight: 500
+      font-weight: 700
       transition: $tr
       margin-bottom: rem(22)
 
@@ -149,6 +119,11 @@
 
       @include md
         font-size: rem(20)
+        margin-bottom: rem(5)
+
+      @include sm
+        font-size: rem(24)
+        margin-bottom: rem(5)
 
     &-desc
       color: $bc
@@ -163,9 +138,6 @@
 
     &:hover
       background: $mc
-      svg
-        path
-          fill: $mc
 
       .delivery-kind__item-kind
         color: $sc

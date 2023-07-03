@@ -205,7 +205,10 @@ a
       opacity: 0.3
       display: none
 
-    
+
+  &.focused
+    border-color: $mc
+    border-radius: rem(8) rem(8) 0 0  
 
   &.open
     .label
@@ -232,6 +235,7 @@ a
 .input
   position: relative
   padding: rem(10) rem(11)
+
   .icon
     margin-right: rem(10)
 
@@ -245,7 +249,48 @@ a
     width: 100%
     height: 100%
 
+  &__search-dropdown-wrap
+    background: $wc
+    border-radius: 0 0 rem(8) rem(8)
+    position: absolute
+    left: 0
+    top: calc( 100% + 1px )
+    width: 100%
+    overflow: hidden
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.15)
+    padding-bottom: rem(10)
+    padding-right: rem(4)
+    
+  &__search-dropdown
+    height: rem(260)
+    overflow: auto 
 
+    &-option-wrap
+      padding-right: rem(4)
+    
+    &-option
+      padding: rem(15)
+      font-size: rem(15)
+      color: #000
+      transition: $tr
+      cursor: pointer
+
+      &:hover
+        background: #F1F3F6
+
+
+    &::-webkit-scrollbar-track 
+      background-color: #fff/*Цвет скролла*/
+   
+    &::-webkit-scrollbar-thumb  
+      border-radius: rem(4)/*Закругление ползунка*/
+      background-color: #C1C1C1/*Цвет ползунка*/
+      
+    &::-webkit-scrollbar  
+      width: rem(4) /*Толщина скролла*/
+    
+
+  
 
   &.not-empty
     .label
@@ -312,19 +357,65 @@ a
     left: 0
     width: 100%
     box-shadow: 0 15px 15px rgba(0,0,0,.1)
-    border-radius: rem(8)
+    border-radius: 0 0 rem(8) rem(8)
     overflow: hidden
     border: rem(1) solid #e3e3e3
+    padding-right: rem(4)
+    background: $wc
 
 
     &-option
       padding: rem(5) rem(10)
       transition: $tr
-      background: $wc
+      font-size: rem(15)
+      padding: rem(10) rem(8)
+      @include aic
+
+      .flag
+        max-width: rem(30)
+        width: 100%
+        display: inline-flex
+        align-items: center
+        justify-content: center
+        margin-right: rem(8)
+        border-radius: rem(4)
+        overflow: hidden
+        border: rem(1) solid #E3E3E3
+
       &:hover
         background: $mc
         color: $wc
 
+  &--phone
+    .select__dropdown
+      border-radius: 0 0 rem(8) rem(8)
+      padding-right: rem(4)
+      padding-bottom: rem(10)
+
+
+
+      .select__dropdown-option
+        color: #000
+        margin-right: rem(4)
+
+        &:hover
+          background: #E1E1E1
+          color: #000
+
+      .select__dropdown-wrap
+        height: rem(145)
+        overflow: auto
+
+    
+        &::-webkit-scrollbar-track 
+          background-color: #fff/*Цвет скролла*/
+      
+        &::-webkit-scrollbar-thumb  
+          border-radius: rem(4)/*Закругление ползунка*/
+          background-color: #C1C1C1/*Цвет ползунка*/
+          
+        &::-webkit-scrollbar  
+          width: rem(4) /*Толщина скролла*/
 
   .tab_select
     
@@ -381,13 +472,25 @@ a
 
           &:hover
             color: $mc  
-    
+
+      
+
     .tabs_item_select
       padding: rem(20) 0
       background: $wc
       height: 18.75rem
-      overflow-y: scroll
+      overflow: auto
       display: none
+
+      &::-webkit-scrollbar-track 
+        background-color: #fff/*Цвет скролла*/
+    
+      &::-webkit-scrollbar-thumb  
+        border-radius: rem(4)/*Закругление ползунка*/
+        background-color: #C1C1C1/*Цвет ползунка*/
+        
+      &::-webkit-scrollbar  
+        width: rem(4) /*Толщина скролла*/
       
       &:first-child
         display: block

@@ -89,8 +89,8 @@ jQuery(function ($) {
 
 $('.select--typical .select__dropdown-option').on('click', function(e) {    
   
-  $(this).parent().parent().find('.select__selected').text($(this).data('option'))
-  $(this).parent().parent().find('input').attr('value', $(this).data('option'))
+  $(this).parents('.select').find('.select__selected').text($(this).data('option'))
+  $(this).parents('.select').find('input').attr('value', $(this).data('option'))
 });
 
 

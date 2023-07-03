@@ -103,7 +103,7 @@
                             path(d='M20.6667 9L21.0087 8.63523L21.3978 9L21.0087 9.36477L20.6667 9ZM12.6667 9.5C12.3906 9.5 12.1667 9.27614 12.1667 9C12.1667 8.72386 12.3906 8.5 12.6667 8.5V9.5ZM17.8087 5.63523L21.0087 8.63523L20.3248 9.36477L17.1248 6.36477L17.8087 5.63523ZM21.0087 9.36477L17.8087 12.3648L17.1248 11.6352L20.3248 8.63523L21.0087 9.36477ZM20.6667 9.5H12.6667V8.5H20.6667V9.5Z' fill='white')
                             path(d='M3.66675 15L3.3342 14.6266L2.91497 15L3.3342 15.3734L3.66675 15ZM19.6667 15.5C19.9429 15.5 20.1667 15.2761 20.1667 15C20.1667 14.7239 19.9429 14.5 19.6667 14.5L19.6667 15.5ZM6.70263 11.6266L3.3342 14.6266L3.99929 15.3734L7.36771 12.3734L6.70263 11.6266ZM3.3342 15.3734L6.70262 18.3734L7.36771 17.6266L3.99929 14.6266L3.3342 15.3734ZM3.66675 15.5L19.6667 15.5L19.6667 14.5L3.66675 14.5L3.66675 15.5Z' fill='white')
                       .calculator__calculator-calculation-col
-                        .input.input--icon
+                        .input.input--icon.focused
                           .icon 
                             svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
                               g(clip-path='url(#clip0_27_11)')
@@ -115,6 +115,13 @@
 
                           label(for="where").label Куда 
                           input(type="text" id="where")
+
+                          .input__search-dropdown-wrap
+                            .input__search-dropdown
+                              .input__search-dropdown-option-wrap
+                                each option in ['Москва, Россия','Московский, Новомосковский административный округ, Москва, Россия','посёлок завода Мосрентген, Москва, Россия','посёлок городского типа Мостовской, Краснодарский край, Россия']
+                                  .input__search-dropdown-option=option
+
                         ul.calculator__calculator-city-list  
                           each city in ['Москва','Санкт-Петербург','Новосибирск']
                             li 
@@ -188,13 +195,31 @@
                           input(type="text" id="name")
                       
                       .calculator__calculator-calculation-col.calculator__calculator-calculation-col_phone-select 
-                        .select.select--typical
+                        .select.select--phone.select--typical.focused
                           input(type="hidden" value="+996")
                           .select__selected +996
                           .select__dropdown
-                            .select__dropdown-option(data-option="+996") +996
-                            .select__dropdown-option(data-option="+7") +7
-                            .select__dropdown-option(data-option="+998") +998
+                            .select__dropdown-wrap
+                              .select__dropdown-option(data-option="+7")
+                                span.flag
+                                  img(src="images/dist/ru.webp", alt="")
+                                | +7
+                              .select__dropdown-option(data-option="+7")
+                                span.flag
+                                  img(src="images/dist/kz.webp", alt="")
+                                | +7  
+                              .select__dropdown-option(data-option="+998")
+                                span.flag
+                                  img(src="images/dist/uz.webp", alt="")  
+                                | +998
+                              .select__dropdown-option(data-option="+996")
+                                span.flag
+                                  img(src="images/dist/kg.webp", alt="") 
+                                | +996
+                              .select__dropdown-option(data-option="+996")
+                                span.flag
+                                  img(src="images/dist/kg.webp", alt="") 
+                                | +996
                           .icon 
                             svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
                               path(d='M17 10L12 15L7 10' stroke='#222222')

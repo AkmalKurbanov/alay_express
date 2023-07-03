@@ -406,7 +406,7 @@
                       </div>
                     </div>
                     <div class="calculator__calculator-calculation-col">
-                      <div class="input input--icon">
+                      <div class="input input--icon focused">
                         <div class="icon"> 
                           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_27_11)">
@@ -422,6 +422,16 @@
                         </div>
                         <label class="label" for="where">Куда </label>
                         <input type="text" id="where">
+                        <div class="input__search-dropdown-wrap">
+                          <div class="input__search-dropdown">
+                            <div class="input__search-dropdown-option-wrap">
+                              <div class="input__search-dropdown-option">Москва, Россия</div>
+                              <div class="input__search-dropdown-option">Московский, Новомосковский административный округ, Москва, Россия</div>
+                              <div class="input__search-dropdown-option">посёлок завода Мосрентген, Москва, Россия</div>
+                              <div class="input__search-dropdown-option">посёлок городского типа Мостовской, Краснодарский край, Россия</div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                       <ul class="calculator__calculator-city-list"> 
                         <li> <a href="#">Москва</a></li>
@@ -574,13 +584,17 @@
                       </div>
                     </div>
                     <div class="calculator__calculator-calculation-col calculator__calculator-calculation-col_phone-select"> 
-                      <div class="select select--typical">
+                      <div class="select select--phone select--typical focused">
                         <input type="hidden" value="+996">
                         <div class="select__selected">+996</div>
                         <div class="select__dropdown">
-                          <div class="select__dropdown-option" data-option="+996">+996</div>
-                          <div class="select__dropdown-option" data-option="+7">+7</div>
-                          <div class="select__dropdown-option" data-option="+998">+998</div>
+                          <div class="select__dropdown-wrap">
+                            <div class="select__dropdown-option" data-option="+7"><span class="flag"><img src="images/dist/ru.webp" alt=""></span>+7</div>
+                            <div class="select__dropdown-option" data-option="+7"><span class="flag"><img src="images/dist/kz.webp" alt=""></span>+7  </div>
+                            <div class="select__dropdown-option" data-option="+998"><span class="flag"><img src="images/dist/uz.webp" alt=""></span>+998</div>
+                            <div class="select__dropdown-option" data-option="+996"><span class="flag"><img src="images/dist/kg.webp" alt=""></span>+996</div>
+                            <div class="select__dropdown-option" data-option="+996"><span class="flag"><img src="images/dist/kg.webp" alt=""></span>+996</div>
+                          </div>
                         </div>
                         <div class="icon"> 
                           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
