@@ -33,3 +33,15 @@ $(document).ready(function() {
 	})(jQuery);
 
 });
+
+
+
+
+
+$('.calculator-mobile .calculator__calculator-tab').on('click', function(e){
+	e.preventDefault()	;
+	$(this).next().slideToggle();
+	$(this).toggleClass('open');
+	$('.calculator__calculator-calculation').not($(this).parents('.calculator-mobile__item').find('.calculator__calculator-calculation')).slideUp();
+	$('.calculator__calculator-tab').not(this).removeClass('open');
+});

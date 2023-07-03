@@ -1,232 +1,422 @@
 .calculator#calculator
-          .container 
-            .title-wrap
-              h1.title
-                span Быстро 
-                | и 
-                span просто 
-            
-              .text 
-                p Alay Express принимает посылки и письма физических лиц в 657 городах и доставляет их во все регионы России, а также в Беларусь, Казахстан и Киргизию.
-          .calculator__calculator-wrap
-            .calculator__calculator.tab
-              form(action="#") 
-                .container 
-                  .calculator__calculator-top
-                    .calculator__calculator-tabs-wrap
-                      ul.calculator__calculator-tabs.tabs
-                          
-                        each tab,index in ['Калькулятор','Отследить','Заключить договор'] 
-                          if index == 0
-                            li
-                              a(href="#").calculator__calculator-tab
-                                .icon
-                                  svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
-                                    path(d='M21 19.5C21 18.6716 20.3284 18 19.5 18C18.6716 18 18 18.6716 18 19.5C18 20.3284 18.6716 21 19.5 21C20.3284 21 21 20.3284 21 19.5Z'  stroke-width='1.5')
-                                    path(d='M13.5 19.5C13.5 18.6716 12.8284 18 12 18C11.1716 18 10.5 18.6716 10.5 19.5C10.5 20.3284 11.1716 21 12 21C12.8284 21 13.5 20.3284 13.5 19.5Z'  stroke-width='1.5')
-                                    path(d='M6 19.5C6 18.6716 5.32843 18 4.5 18C3.67157 18 3 18.6716 3 19.5C3 20.3284 3.67157 21 4.5 21C5.32843 21 6 20.3284 6 19.5Z'  stroke-width='1.5')
-                                    path(d='M21 12C21 11.1716 20.3284 10.5 19.5 10.5C18.6716 10.5 18 11.1716 18 12C18 12.8284 18.6716 13.5 19.5 13.5C20.3284 13.5 21 12.8284 21 12Z'  stroke-width='1.5')
-                                    path(d='M21 4.5C21 3.67157 20.3284 3 19.5 3C18.6716 3 18 3.67157 18 4.5C18 5.32843 18.6716 6 19.5 6C20.3284 6 21 5.32843 21 4.5Z'  stroke-width='1.5')
-                                    path(d='M13.5 12C13.5 11.1716 12.8284 10.5 12 10.5C11.1716 10.5 10.5 11.1716 10.5 12C10.5 12.8284 11.1716 13.5 12 13.5C12.8284 13.5 13.5 12.8284 13.5 12Z'  stroke-width='1.5')
-                                    path(d='M13.5 4.5C13.5 3.67157 12.8284 3 12 3C11.1716 3 10.5 3.67157 10.5 4.5C10.5 5.32843 11.1716 6 12 6C12.8284 6 13.5 5.32843 13.5 4.5Z'  stroke-width='1.5')
-                                    path(d='M6 12C6 11.1716 5.32843 10.5 4.5 10.5C3.67157 10.5 3 11.1716 3 12C3 12.8284 3.67157 13.5 4.5 13.5C5.32843 13.5 6 12.8284 6 12Z'  stroke-width='1.5')
-                                    path(d='M6 4.5C6 3.67157 5.32843 3 4.5 3C3.67157 3 3 3.67157 3 4.5C3 5.32843 3.67157 6 4.5 6C5.32843 6 6 5.32843 6 4.5Z'  stroke-width='1.5')
-                                span=tab 
-                          else if index == 1
-                            li
-                              a(href="#").calculator__calculator-tab
-                                .icon
-                                  svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
-                                    path(d='M13.6177 21.367C13.1841 21.773 12.6044 22 12.0011 22C11.3978 22 10.8182 21.773 10.3845 21.367C6.41302 17.626 1.09076 13.4469 3.68627 7.37966C5.08963 4.09916 8.45834 2 12.0011 2C15.5439 2 18.9126 4.09916 20.316 7.37966C22.9082 13.4393 17.599 17.6389 13.6177 21.367Z' stroke-width='1.5')
-                                    path(d='M15.5 11C15.5 12.933 13.933 14.5 12 14.5C10.067 14.5 8.5 12.933 8.5 11C8.5 9.067 10.067 7.5 12 7.5C13.933 7.5 15.5 9.067 15.5 11Z' stroke-width='1.5')
-                                span=tab 
-
-                          else 
-                            li
-                              a(href="#").calculator__calculator-tab
-                                .icon
-                                  svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
-                                    path(d='M3.5 10C3.5 6.22876 3.5 4.34315 4.7448 3.17157C5.98959 2 7.99306 2 12 2H12.7727C16.0339 2 17.6645 2 18.7969 2.79784C19.1214 3.02643 19.4094 3.29752 19.6523 3.60289C20.5 4.66867 20.5 6.20336 20.5 9.27273V11.8182C20.5 14.7814 20.5 16.2629 20.0311 17.4462C19.2772 19.3486 17.6829 20.8491 15.6616 21.5586C14.4044 22 12.8302 22 9.68182 22C7.88275 22 6.98322 22 6.26478 21.7478C5.10979 21.3424 4.19875 20.4849 3.76796 19.3979C3.5 18.7217 3.5 17.8751 3.5 16.1818V10Z' stroke-width='1.5' stroke-linejoin='round')
-                                    path(d='M20.5 12C20.5 13.8409 19.0076 15.3333 17.1667 15.3333C16.5009 15.3333 15.716 15.2167 15.0686 15.3901C14.4935 15.5442 14.0442 15.9935 13.8901 16.5686C13.7167 17.216 13.8333 18.0009 13.8333 18.6667C13.8333 20.5076 12.3409 22 10.5 22' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
-                                    path(d='M8 7H15' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
-                                    path(d='M8 11H11' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
-                                span=tab 
-                      
-                      .calculator__calculator-tabs-selected
-                        .calculator__calculator-tabs-selected-icon.icon
-                          svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
-                            path(d='M21 19.5C21 18.6716 20.3284 18 19.5 18C18.6716 18 18 18.6716 18 19.5C18 20.3284 18.6716 21 19.5 21C20.3284 21 21 20.3284 21 19.5Z' stroke-width='1.5')
-                            path(d='M13.5 19.5C13.5 18.6716 12.8284 18 12 18C11.1716 18 10.5 18.6716 10.5 19.5C10.5 20.3284 11.1716 21 12 21C12.8284 21 13.5 20.3284 13.5 19.5Z' stroke-width='1.5')
-                            path(d='M6 19.5C6 18.6716 5.32843 18 4.5 18C3.67157 18 3 18.6716 3 19.5C3 20.3284 3.67157 21 4.5 21C5.32843 21 6 20.3284 6 19.5Z' stroke-width='1.5')
-                            path(d='M21 12C21 11.1716 20.3284 10.5 19.5 10.5C18.6716 10.5 18 11.1716 18 12C18 12.8284 18.6716 13.5 19.5 13.5C20.3284 13.5 21 12.8284 21 12Z' stroke-width='1.5')
-                            path(d='M21 4.5C21 3.67157 20.3284 3 19.5 3C18.6716 3 18 3.67157 18 4.5C18 5.32843 18.6716 6 19.5 6C20.3284 6 21 5.32843 21 4.5Z' stroke-width='1.5')
-                            path(d='M13.5 12C13.5 11.1716 12.8284 10.5 12 10.5C11.1716 10.5 10.5 11.1716 10.5 12C10.5 12.8284 11.1716 13.5 12 13.5C12.8284 13.5 13.5 12.8284 13.5 12Z' stroke-width='1.5')
-                            path(d='M13.5 4.5C13.5 3.67157 12.8284 3 12 3C11.1716 3 10.5 3.67157 10.5 4.5C10.5 5.32843 11.1716 6 12 6C12.8284 6 13.5 5.32843 13.5 4.5Z' stroke-width='1.5')
-                            path(d='M6 12C6 11.1716 5.32843 10.5 4.5 10.5C3.67157 10.5 3 11.1716 3 12C3 12.8284 3.67157 13.5 4.5 13.5C5.32843 13.5 6 12.8284 6 12Z' stroke-width='1.5')
-                            path(d='M6 4.5C6 3.67157 5.32843 3 4.5 3C3.67157 3 3 3.67157 3 4.5C3 5.32843 3.67157 6 4.5 6C5.32843 6 6 5.32843 6 4.5Z' stroke-width='1.5')
-                        span Калькулятор
-                        .calculator__calculator-tabs-selected-arrow.icon
-                          svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
-                            path(d='M17 10L12 15L7 10' stroke='#222222')
-
-                    .calculator__calculator-switch 
-                      .calculator__calculator-switch-item.calculator__calculator-switch-item--active Физ-лицо
-                      .calculator__calculator-switch-item Интернет-Магазин
-
-                .calculator__calculator-bottom.tab_content
+  .container 
+    .title-wrap
+      h1.title
+        span Быстро 
+        | и 
+        span просто 
+    
+      .text 
+        p Alay Express принимает посылки и письма физических лиц в 657 городах и доставляет их во все регионы России, а также в Беларусь, Казахстан и Киргизию.
+  .calculator__calculator-wrap
+    .calculator__calculator.tab
+      form(action="#") 
+        .container 
+          .calculator__calculator-top
+            .calculator__calculator-tabs-wrap
+              ul.calculator__calculator-tabs.tabs
                   
-                  .container.tabs_item
-                    
-                    .calculator__calculator-calculation
-                      
-                      .calculator__calculator-calculation-col
-                        .input.input--icon
-                          .icon 
-                            svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
-                              g(clip-path='url(#clip0_27_11)')
-                                path(d='M16.5833 16.5833L20.3333 20.3333' stroke='#009688' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
-                                path(d='M18.6667 11.1667C18.6667 7.02452 15.3088 3.66666 11.1667 3.66666C7.02452 3.66666 3.66666 7.02452 3.66666 11.1667C3.66666 15.3088 7.02452 18.6667 11.1667 18.6667C15.3088 18.6667 18.6667 15.3088 18.6667 11.1667Z' stroke='#009688' stroke-width='1.5' stroke-linejoin='round')
-                              defs
-                                clippath#clip0_27_11
-                                  rect(width='20' height='20' fill='white' transform='translate(2 2)')
-
-                          label(for="from-where").label Откуда
-                          input(type="text" id="from-where")
-                        ul.calculator__calculator-city-list  
-                          each city in ['Москва','Санкт-Петербург','Новосибирск']
-                            li 
-                              a(href="#")=city 
-                      .btn-switch 
+                each tab,index in ['Калькулятор','Отследить','Заключить договор'] 
+                  if index == 0
+                    li
+                      a(href="#").calculator__calculator-tab
                         .icon
-                          svg(width='25' height='24' viewBox='0 0 25 24' fill='none' xmlns='http://www.w3.org/2000/svg')
-                            rect(x='24.3334' width='24' height='24' rx='8' transform='rotate(90 24.3334 0)' fill='#009688')
-                            path(d='M20.6667 9L21.0087 8.63523L21.3978 9L21.0087 9.36477L20.6667 9ZM12.6667 9.5C12.3906 9.5 12.1667 9.27614 12.1667 9C12.1667 8.72386 12.3906 8.5 12.6667 8.5V9.5ZM17.8087 5.63523L21.0087 8.63523L20.3248 9.36477L17.1248 6.36477L17.8087 5.63523ZM21.0087 9.36477L17.8087 12.3648L17.1248 11.6352L20.3248 8.63523L21.0087 9.36477ZM20.6667 9.5H12.6667V8.5H20.6667V9.5Z' fill='white')
-                            path(d='M3.66675 15L3.3342 14.6266L2.91497 15L3.3342 15.3734L3.66675 15ZM19.6667 15.5C19.9429 15.5 20.1667 15.2761 20.1667 15C20.1667 14.7239 19.9429 14.5 19.6667 14.5L19.6667 15.5ZM6.70263 11.6266L3.3342 14.6266L3.99929 15.3734L7.36771 12.3734L6.70263 11.6266ZM3.3342 15.3734L6.70262 18.3734L7.36771 17.6266L3.99929 14.6266L3.3342 15.3734ZM3.66675 15.5L19.6667 15.5L19.6667 14.5L3.66675 14.5L3.66675 15.5Z' fill='white')
-                      .calculator__calculator-calculation-col
-                        .input.input--icon.focused
-                          .icon 
-                            svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
-                              g(clip-path='url(#clip0_27_11)')
-                                path(d='M16.5833 16.5833L20.3333 20.3333' stroke='#009688' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
-                                path(d='M18.6667 11.1667C18.6667 7.02452 15.3088 3.66666 11.1667 3.66666C7.02452 3.66666 3.66666 7.02452 3.66666 11.1667C3.66666 15.3088 7.02452 18.6667 11.1667 18.6667C15.3088 18.6667 18.6667 15.3088 18.6667 11.1667Z' stroke='#009688' stroke-width='1.5' stroke-linejoin='round')
-                              defs
-                                clippath#clip0_27_11
-                                  rect(width='20' height='20' fill='white' transform='translate(2 2)')
+                          svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+                            path(d='M21 19.5C21 18.6716 20.3284 18 19.5 18C18.6716 18 18 18.6716 18 19.5C18 20.3284 18.6716 21 19.5 21C20.3284 21 21 20.3284 21 19.5Z'  stroke-width='1.5')
+                            path(d='M13.5 19.5C13.5 18.6716 12.8284 18 12 18C11.1716 18 10.5 18.6716 10.5 19.5C10.5 20.3284 11.1716 21 12 21C12.8284 21 13.5 20.3284 13.5 19.5Z'  stroke-width='1.5')
+                            path(d='M6 19.5C6 18.6716 5.32843 18 4.5 18C3.67157 18 3 18.6716 3 19.5C3 20.3284 3.67157 21 4.5 21C5.32843 21 6 20.3284 6 19.5Z'  stroke-width='1.5')
+                            path(d='M21 12C21 11.1716 20.3284 10.5 19.5 10.5C18.6716 10.5 18 11.1716 18 12C18 12.8284 18.6716 13.5 19.5 13.5C20.3284 13.5 21 12.8284 21 12Z'  stroke-width='1.5')
+                            path(d='M21 4.5C21 3.67157 20.3284 3 19.5 3C18.6716 3 18 3.67157 18 4.5C18 5.32843 18.6716 6 19.5 6C20.3284 6 21 5.32843 21 4.5Z'  stroke-width='1.5')
+                            path(d='M13.5 12C13.5 11.1716 12.8284 10.5 12 10.5C11.1716 10.5 10.5 11.1716 10.5 12C10.5 12.8284 11.1716 13.5 12 13.5C12.8284 13.5 13.5 12.8284 13.5 12Z'  stroke-width='1.5')
+                            path(d='M13.5 4.5C13.5 3.67157 12.8284 3 12 3C11.1716 3 10.5 3.67157 10.5 4.5C10.5 5.32843 11.1716 6 12 6C12.8284 6 13.5 5.32843 13.5 4.5Z'  stroke-width='1.5')
+                            path(d='M6 12C6 11.1716 5.32843 10.5 4.5 10.5C3.67157 10.5 3 11.1716 3 12C3 12.8284 3.67157 13.5 4.5 13.5C5.32843 13.5 6 12.8284 6 12Z'  stroke-width='1.5')
+                            path(d='M6 4.5C6 3.67157 5.32843 3 4.5 3C3.67157 3 3 3.67157 3 4.5C3 5.32843 3.67157 6 4.5 6C5.32843 6 6 5.32843 6 4.5Z'  stroke-width='1.5')
+                        span=tab 
+                  else if index == 1
+                    li
+                      a(href="#").calculator__calculator-tab
+                        .icon
+                          svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+                            path(d='M13.6177 21.367C13.1841 21.773 12.6044 22 12.0011 22C11.3978 22 10.8182 21.773 10.3845 21.367C6.41302 17.626 1.09076 13.4469 3.68627 7.37966C5.08963 4.09916 8.45834 2 12.0011 2C15.5439 2 18.9126 4.09916 20.316 7.37966C22.9082 13.4393 17.599 17.6389 13.6177 21.367Z' stroke-width='1.5')
+                            path(d='M15.5 11C15.5 12.933 13.933 14.5 12 14.5C10.067 14.5 8.5 12.933 8.5 11C8.5 9.067 10.067 7.5 12 7.5C13.933 7.5 15.5 9.067 15.5 11Z' stroke-width='1.5')
+                        span=tab 
 
-                          label(for="where").label Куда 
-                          input(type="text" id="where")
+                  else 
+                    li
+                      a(href="#").calculator__calculator-tab
+                        .icon
+                          svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+                            path(d='M3.5 10C3.5 6.22876 3.5 4.34315 4.7448 3.17157C5.98959 2 7.99306 2 12 2H12.7727C16.0339 2 17.6645 2 18.7969 2.79784C19.1214 3.02643 19.4094 3.29752 19.6523 3.60289C20.5 4.66867 20.5 6.20336 20.5 9.27273V11.8182C20.5 14.7814 20.5 16.2629 20.0311 17.4462C19.2772 19.3486 17.6829 20.8491 15.6616 21.5586C14.4044 22 12.8302 22 9.68182 22C7.88275 22 6.98322 22 6.26478 21.7478C5.10979 21.3424 4.19875 20.4849 3.76796 19.3979C3.5 18.7217 3.5 17.8751 3.5 16.1818V10Z' stroke-width='1.5' stroke-linejoin='round')
+                            path(d='M20.5 12C20.5 13.8409 19.0076 15.3333 17.1667 15.3333C16.5009 15.3333 15.716 15.2167 15.0686 15.3901C14.4935 15.5442 14.0442 15.9935 13.8901 16.5686C13.7167 17.216 13.8333 18.0009 13.8333 18.6667C13.8333 20.5076 12.3409 22 10.5 22' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+                            path(d='M8 7H15' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+                            path(d='M8 11H11' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+                        span=tab 
+              
+              //- .calculator__calculator-tabs-selected
+                .calculator__calculator-tabs-selected-icon.icon
+                  svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+                    path(d='M21 19.5C21 18.6716 20.3284 18 19.5 18C18.6716 18 18 18.6716 18 19.5C18 20.3284 18.6716 21 19.5 21C20.3284 21 21 20.3284 21 19.5Z' stroke-width='1.5')
+                    path(d='M13.5 19.5C13.5 18.6716 12.8284 18 12 18C11.1716 18 10.5 18.6716 10.5 19.5C10.5 20.3284 11.1716 21 12 21C12.8284 21 13.5 20.3284 13.5 19.5Z' stroke-width='1.5')
+                    path(d='M6 19.5C6 18.6716 5.32843 18 4.5 18C3.67157 18 3 18.6716 3 19.5C3 20.3284 3.67157 21 4.5 21C5.32843 21 6 20.3284 6 19.5Z' stroke-width='1.5')
+                    path(d='M21 12C21 11.1716 20.3284 10.5 19.5 10.5C18.6716 10.5 18 11.1716 18 12C18 12.8284 18.6716 13.5 19.5 13.5C20.3284 13.5 21 12.8284 21 12Z' stroke-width='1.5')
+                    path(d='M21 4.5C21 3.67157 20.3284 3 19.5 3C18.6716 3 18 3.67157 18 4.5C18 5.32843 18.6716 6 19.5 6C20.3284 6 21 5.32843 21 4.5Z' stroke-width='1.5')
+                    path(d='M13.5 12C13.5 11.1716 12.8284 10.5 12 10.5C11.1716 10.5 10.5 11.1716 10.5 12C10.5 12.8284 11.1716 13.5 12 13.5C12.8284 13.5 13.5 12.8284 13.5 12Z' stroke-width='1.5')
+                    path(d='M13.5 4.5C13.5 3.67157 12.8284 3 12 3C11.1716 3 10.5 3.67157 10.5 4.5C10.5 5.32843 11.1716 6 12 6C12.8284 6 13.5 5.32843 13.5 4.5Z' stroke-width='1.5')
+                    path(d='M6 12C6 11.1716 5.32843 10.5 4.5 10.5C3.67157 10.5 3 11.1716 3 12C3 12.8284 3.67157 13.5 4.5 13.5C5.32843 13.5 6 12.8284 6 12Z' stroke-width='1.5')
+                    path(d='M6 4.5C6 3.67157 5.32843 3 4.5 3C3.67157 3 3 3.67157 3 4.5C3 5.32843 3.67157 6 4.5 6C5.32843 6 6 5.32843 6 4.5Z' stroke-width='1.5')
+                span Калькулятор
+                .calculator__calculator-tabs-selected-arrow.icon
+                  svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+                    path(d='M17 10L12 15L7 10' stroke='#222222')
 
-                          .input__search-dropdown-wrap
-                            .input__search-dropdown
-                              .input__search-dropdown-option-wrap
-                                each option in ['Москва, Россия','Московский, Новомосковский административный округ, Москва, Россия','посёлок завода Мосрентген, Москва, Россия','посёлок городского типа Мостовской, Краснодарский край, Россия']
-                                  .input__search-dropdown-option=option
+            .calculator__calculator-switch 
+              .calculator__calculator-switch-item.calculator__calculator-switch-item--active Физ-лицо
+              .calculator__calculator-switch-item Интернет-Магазин
 
-                        ul.calculator__calculator-city-list  
-                          each city in ['Москва','Санкт-Петербург','Новосибирск']
-                            li 
-                              a(href="#")=city 
-                      .calculator__calculator-calculation-col
-                        .select
-                          label.label Размер посылки 
-                          .select__selected
-                          .select__dropdown
-                            .tab_select
-                              ul.tabs_select
-                                li
-                                  a(href='#') Точные размеры
-                                li
-                                  a(href='#') Примерно
+        .calculator__calculator-bottom.tab_content
+          
+          .container.tabs_item
+            
+            .calculator__calculator-calculation
+              
+              .calculator__calculator-calculation-col
+                .input.input--icon
+                  .icon 
+                    svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+                      g(clip-path='url(#clip0_27_11)')
+                        path(d='M16.5833 16.5833L20.3333 20.3333' stroke='#009688' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+                        path(d='M18.6667 11.1667C18.6667 7.02452 15.3088 3.66666 11.1667 3.66666C7.02452 3.66666 3.66666 7.02452 3.66666 11.1667C3.66666 15.3088 7.02452 18.6667 11.1667 18.6667C15.3088 18.6667 18.6667 15.3088 18.6667 11.1667Z' stroke='#009688' stroke-width='1.5' stroke-linejoin='round')
+                      defs
+                        clippath#clip0_27_11
+                          rect(width='20' height='20' fill='white' transform='translate(2 2)')
 
-                              .tab_content_select
-                                .tabs_item_select
-                                  .select__list
-                                    each size,index in sizes
-                                      label(for="size"+(index+1)).select__list-item
-                                        input(type="radio" value="size"+(index+1) name="размер" id="size"+(index+1)) 
-                                        .select__list-item-img 
-                                          img(src="images/dist/"+size.img+".webp", alt="")
-                                        .select__list-item-desc 
-                                          h2(data-title=size.title)=size.title 
-                                          span(data-size=size.size)=size.size 
-                                          p=size.desc 
-                                
-                                .tabs_item_select
-                                  .input-wrap
-                                    each place in['Длина, см','Ширина, см', 'Высота, см','Вес, кг']
-                                      .input
-                                        input(type="text")
-                                        label.label=place  
+                  label(for="from-where").label Откуда
+                  input(type="text" id="from-where")
+                ul.calculator__calculator-city-list  
+                  each city in ['Москва','Санкт-Петербург','Новосибирск']
+                    li 
+                      a(href="#")=city 
+              .btn-switch 
+                .icon
+                  svg(width='25' height='24' viewBox='0 0 25 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+                    rect(x='24.3334' width='24' height='24' rx='8' transform='rotate(90 24.3334 0)' fill='#009688')
+                    path(d='M20.6667 9L21.0087 8.63523L21.3978 9L21.0087 9.36477L20.6667 9ZM12.6667 9.5C12.3906 9.5 12.1667 9.27614 12.1667 9C12.1667 8.72386 12.3906 8.5 12.6667 8.5V9.5ZM17.8087 5.63523L21.0087 8.63523L20.3248 9.36477L17.1248 6.36477L17.8087 5.63523ZM21.0087 9.36477L17.8087 12.3648L17.1248 11.6352L20.3248 8.63523L21.0087 9.36477ZM20.6667 9.5H12.6667V8.5H20.6667V9.5Z' fill='white')
+                    path(d='M3.66675 15L3.3342 14.6266L2.91497 15L3.3342 15.3734L3.66675 15ZM19.6667 15.5C19.9429 15.5 20.1667 15.2761 20.1667 15C20.1667 14.7239 19.9429 14.5 19.6667 14.5L19.6667 15.5ZM6.70263 11.6266L3.3342 14.6266L3.99929 15.3734L7.36771 12.3734L6.70263 11.6266ZM3.3342 15.3734L6.70262 18.3734L7.36771 17.6266L3.99929 14.6266L3.3342 15.3734ZM3.66675 15.5L19.6667 15.5L19.6667 14.5L3.66675 14.5L3.66675 15.5Z' fill='white')
+             
+              .calculator__calculator-calculation-col
+                .input.input--icon.focused
+                  .icon 
+                    svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+                      g(clip-path='url(#clip0_27_11)')
+                        path(d='M16.5833 16.5833L20.3333 20.3333' stroke='#009688' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+                        path(d='M18.6667 11.1667C18.6667 7.02452 15.3088 3.66666 11.1667 3.66666C7.02452 3.66666 3.66666 7.02452 3.66666 11.1667C3.66666 15.3088 7.02452 18.6667 11.1667 18.6667C15.3088 18.6667 18.6667 15.3088 18.6667 11.1667Z' stroke='#009688' stroke-width='1.5' stroke-linejoin='round')
+                      defs
+                        clippath#clip0_27_11
+                          rect(width='20' height='20' fill='white' transform='translate(2 2)')
 
-                          .icon 
-                            svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
-                              path(d='M17 10L12 15L7 10' stroke='#222222')
+                  label(for="where").label Куда 
+                  input(type="text" id="where")
 
-                      button(type="submit").btn Рассчитать 
+                  .input__search-dropdown-wrap
+                    .input__search-dropdown
+                      .input__search-dropdown-option-wrap
+                        each option in ['Москва, Россия','Московский, Новомосковский административный округ, Москва, Россия','посёлок завода Мосрентген, Москва, Россия','посёлок городского типа Мостовской, Краснодарский край, Россия']
+                          .input__search-dropdown-option=option
+
+                ul.calculator__calculator-city-list  
+                  each city in ['Москва','Санкт-Петербург','Новосибирск']
+                    li 
+                      a(href="#")=city 
+              .calculator__calculator-calculation-col
+                .select
+                  label.label Размер посылки 
+                  .select__selected
+                  .select__dropdown
+                    .tab_select
+                      ul.tabs_select
+                        li
+                          a(href='#') Точные размеры
+                        li
+                          a(href='#') Примерно
+
+                      .tab_content_select
+                        .tabs_item_select
+                          .select__list
+                            each size,index in sizes
+                              label(for="size"+(index+1)).select__list-item
+                                input(type="radio" value="size"+(index+1) name="размер" id="size"+(index+1)) 
+                                .select__list-item-img 
+                                  img(src="images/dist/"+size.img+".webp", alt="")
+                                .select__list-item-desc 
+                                  h2(data-title=size.title)=size.title 
+                                  span(data-size=size.size)=size.size 
+                                  p=size.desc 
+                        
+                        .tabs_item_select
+                          .input-wrap
+                            each place in['Длина, см','Ширина, см', 'Высота, см','Вес, кг']
+                              .input
+                                input(type="text")
+                                label.label=place  
+
+                  .icon 
+                    svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+                      path(d='M17 10L12 15L7 10' stroke='#222222')
+
+              button(type="submit").btn Рассчитать 
+          
+          .container.tabs_item
+            
+            .calculator__calculator-calculation
+              
+              .calculator__calculator-calculation-col
+                .input.input--icon
+                  .icon 
+                    svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+                      g(clip-path='url(#clip0_27_11)')
+                        path(d='M16.5833 16.5833L20.3333 20.3333' stroke='#009688' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+                        path(d='M18.6667 11.1667C18.6667 7.02452 15.3088 3.66666 11.1667 3.66666C7.02452 3.66666 3.66666 7.02452 3.66666 11.1667C3.66666 15.3088 7.02452 18.6667 11.1667 18.6667C15.3088 18.6667 18.6667 15.3088 18.6667 11.1667Z' stroke='#009688' stroke-width='1.5' stroke-linejoin='round')
+                      defs
+                        clippath#clip0_27_11
+                          rect(width='20' height='20' fill='white' transform='translate(2 2)')
+
+                  label(for="order-number").label Укажите номер заказа
+                  input(type="text" id="order-number")
+                
+              
+              button(type="submit").btn Отследить 
+          
+          .container.tabs_item
+            
+            .calculator__calculator-calculation
+              
+              .calculator__calculator-calculation-col
+                .input
+                  label(for="name").label Имя
+                  input(type="text" id="name")
+              
+              .calculator__calculator-calculation-col.calculator__calculator-calculation-col_phone-select 
+                .select.select--phone.select--typical.focused
+                  input(type="hidden" value="+996")
+                  .select__selected +996
+                  .select__dropdown
+                    .select__dropdown-wrap
+                      .select__dropdown-option(data-option="+7")
+                        span.flag
+                          img(src="images/dist/ru.webp", alt="")
+                        | +7
+                      .select__dropdown-option(data-option="+7")
+                        span.flag
+                          img(src="images/dist/kz.webp", alt="")
+                        | +7  
+                      .select__dropdown-option(data-option="+998")
+                        span.flag
+                          img(src="images/dist/uz.webp", alt="")  
+                        | +998
+                      .select__dropdown-option(data-option="+996")
+                        span.flag
+                          img(src="images/dist/kg.webp", alt="") 
+                        | +996
+                      .select__dropdown-option(data-option="+996")
+                        span.flag
+                          img(src="images/dist/kg.webp", alt="") 
+                        | +996
+                  .icon 
+                    svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+                      path(d='M17 10L12 15L7 10' stroke='#222222')
+                                    
+                .input
+                  label(for="phone").label Телефон
+                  input(type="text" id="phone")
+
+              button(type="submit").btn Заключить договор 
+          
+.calculator-mobile 
+  .container 
+    .calculator__calculator-switch
+      .calculator__calculator-switch-item.calculator__calculator-switch-item--active Физ-лицо
+      .calculator__calculator-switch-item Интернет-Магазин
+
+    .calculator-mobile__item
+      a.calculator__calculator-tab(href='#')
+        .icon
+          svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+            path(d='M21 19.5C21 18.6716 20.3284 18 19.5 18C18.6716 18 18 18.6716 18 19.5C18 20.3284 18.6716 21 19.5 21C20.3284 21 21 20.3284 21 19.5Z' stroke-width='1.5')
+            path(d='M13.5 19.5C13.5 18.6716 12.8284 18 12 18C11.1716 18 10.5 18.6716 10.5 19.5C10.5 20.3284 11.1716 21 12 21C12.8284 21 13.5 20.3284 13.5 19.5Z' stroke-width='1.5')
+            path(d='M6 19.5C6 18.6716 5.32843 18 4.5 18C3.67157 18 3 18.6716 3 19.5C3 20.3284 3.67157 21 4.5 21C5.32843 21 6 20.3284 6 19.5Z' stroke-width='1.5')
+            path(d='M21 12C21 11.1716 20.3284 10.5 19.5 10.5C18.6716 10.5 18 11.1716 18 12C18 12.8284 18.6716 13.5 19.5 13.5C20.3284 13.5 21 12.8284 21 12Z' stroke-width='1.5')
+            path(d='M21 4.5C21 3.67157 20.3284 3 19.5 3C18.6716 3 18 3.67157 18 4.5C18 5.32843 18.6716 6 19.5 6C20.3284 6 21 5.32843 21 4.5Z' stroke-width='1.5')
+            path(d='M13.5 12C13.5 11.1716 12.8284 10.5 12 10.5C11.1716 10.5 10.5 11.1716 10.5 12C10.5 12.8284 11.1716 13.5 12 13.5C12.8284 13.5 13.5 12.8284 13.5 12Z' stroke-width='1.5')
+            path(d='M13.5 4.5C13.5 3.67157 12.8284 3 12 3C11.1716 3 10.5 3.67157 10.5 4.5C10.5 5.32843 11.1716 6 12 6C12.8284 6 13.5 5.32843 13.5 4.5Z' stroke-width='1.5')
+            path(d='M6 12C6 11.1716 5.32843 10.5 4.5 10.5C3.67157 10.5 3 11.1716 3 12C3 12.8284 3.67157 13.5 4.5 13.5C5.32843 13.5 6 12.8284 6 12Z' stroke-width='1.5')
+            path(d='M6 4.5C6 3.67157 5.32843 3 4.5 3C3.67157 3 3 3.67157 3 4.5C3 5.32843 3.67157 6 4.5 6C5.32843 6 6 5.32843 6 4.5Z' stroke-width='1.5')
+        span Калькулятор
+
+        .arrow
+          svg(width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+            path(d='M15 7.5L10 12.5L5 7.5' stroke='#808080')
+
+      .calculator__calculator-calculation
+              
+        .calculator__calculator-calculation-col
+          .input.input--icon
+            .icon 
+              svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+                g(clip-path='url(#clip0_27_11)')
+                  path(d='M16.5833 16.5833L20.3333 20.3333' stroke='#009688' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+                  path(d='M18.6667 11.1667C18.6667 7.02452 15.3088 3.66666 11.1667 3.66666C7.02452 3.66666 3.66666 7.02452 3.66666 11.1667C3.66666 15.3088 7.02452 18.6667 11.1667 18.6667C15.3088 18.6667 18.6667 15.3088 18.6667 11.1667Z' stroke='#009688' stroke-width='1.5' stroke-linejoin='round')
+                defs
+                  clippath#clip0_27_11
+                    rect(width='20' height='20' fill='white' transform='translate(2 2)')
+
+            label(for="from-where").label Откуда
+            input(type="text" id="from-where")
+          ul.calculator__calculator-city-list  
+            each city in ['Москва','Санкт-Петербург','Новосибирск']
+              li 
+                a(href="#")=city 
+        
+        .calculator__calculator-calculation-col
+          .input.input--icon.focused
+            .icon 
+              svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+                g(clip-path='url(#clip0_27_11)')
+                  path(d='M16.5833 16.5833L20.3333 20.3333' stroke='#009688' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+                  path(d='M18.6667 11.1667C18.6667 7.02452 15.3088 3.66666 11.1667 3.66666C7.02452 3.66666 3.66666 7.02452 3.66666 11.1667C3.66666 15.3088 7.02452 18.6667 11.1667 18.6667C15.3088 18.6667 18.6667 15.3088 18.6667 11.1667Z' stroke='#009688' stroke-width='1.5' stroke-linejoin='round')
+                defs
+                  clippath#clip0_27_11
+                    rect(width='20' height='20' fill='white' transform='translate(2 2)')
+
+            label(for="where").label Куда 
+            input(type="text" id="where")
+
+            .input__search-dropdown-wrap
+              .input__search-dropdown
+                .input__search-dropdown-option-wrap
+                  each option in ['Москва, Россия','Московский, Новомосковский административный округ, Москва, Россия','посёлок завода Мосрентген, Москва, Россия','посёлок городского типа Мостовской, Краснодарский край, Россия']
+                    .input__search-dropdown-option=option
+
+          ul.calculator__calculator-city-list  
+            each city in ['Москва','Санкт-Петербург','Новосибирск']
+              li 
+                a(href="#")=city 
+        .calculator__calculator-calculation-col
+          .select
+            label.label Размер посылки 
+            .select__selected
+            .select__dropdown
+              .tab_select
+                ul.tabs_select
+                  li
+                    a(href='#') Точные размеры
+                  li
+                    a(href='#') Примерно
+
+                .tab_content_select
+                  .tabs_item_select
+                    .select__list
+                      each size,index in sizes
+                        label(for="size"+(index+1)).select__list-item
+                          input(type="radio" value="size"+(index+1) name="размер" id="size"+(index+1)) 
+                          .select__list-item-img 
+                            img(src="images/dist/"+size.img+".webp", alt="")
+                          .select__list-item-desc 
+                            h2(data-title=size.title)=size.title 
+                            span(data-size=size.size)=size.size 
+                            p=size.desc 
                   
-                  .container.tabs_item
-                    
-                    .calculator__calculator-calculation
-                      
-                      .calculator__calculator-calculation-col
-                        .input.input--icon
-                          .icon 
-                            svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
-                              g(clip-path='url(#clip0_27_11)')
-                                path(d='M16.5833 16.5833L20.3333 20.3333' stroke='#009688' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
-                                path(d='M18.6667 11.1667C18.6667 7.02452 15.3088 3.66666 11.1667 3.66666C7.02452 3.66666 3.66666 7.02452 3.66666 11.1667C3.66666 15.3088 7.02452 18.6667 11.1667 18.6667C15.3088 18.6667 18.6667 15.3088 18.6667 11.1667Z' stroke='#009688' stroke-width='1.5' stroke-linejoin='round')
-                              defs
-                                clippath#clip0_27_11
-                                  rect(width='20' height='20' fill='white' transform='translate(2 2)')
-
-                          label(for="order-number").label Укажите номер заказа
-                          input(type="text" id="order-number")
-                       
-                      
-                      button(type="submit").btn Отследить 
-                  
-                  .container.tabs_item
-                    
-                    .calculator__calculator-calculation
-                      
-                      .calculator__calculator-calculation-col
+                  .tabs_item_select
+                    .input-wrap
+                      each place in['Длина, см','Ширина, см', 'Высота, см','Вес, кг']
                         .input
-                          label(for="name").label Имя
-                          input(type="text" id="name")
-                      
-                      .calculator__calculator-calculation-col.calculator__calculator-calculation-col_phone-select 
-                        .select.select--phone.select--typical.focused
-                          input(type="hidden" value="+996")
-                          .select__selected +996
-                          .select__dropdown
-                            .select__dropdown-wrap
-                              .select__dropdown-option(data-option="+7")
-                                span.flag
-                                  img(src="images/dist/ru.webp", alt="")
-                                | +7
-                              .select__dropdown-option(data-option="+7")
-                                span.flag
-                                  img(src="images/dist/kz.webp", alt="")
-                                | +7  
-                              .select__dropdown-option(data-option="+998")
-                                span.flag
-                                  img(src="images/dist/uz.webp", alt="")  
-                                | +998
-                              .select__dropdown-option(data-option="+996")
-                                span.flag
-                                  img(src="images/dist/kg.webp", alt="") 
-                                | +996
-                              .select__dropdown-option(data-option="+996")
-                                span.flag
-                                  img(src="images/dist/kg.webp", alt="") 
-                                | +996
-                          .icon 
-                            svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
-                              path(d='M17 10L12 15L7 10' stroke='#222222')
-                                            
-                        .input
-                          label(for="phone").label Телефон
-                          input(type="text" id="phone")
+                          input(type="text")
+                          label.label=place  
 
-                      button(type="submit").btn Заключить договор 
-                  
+            .icon 
+              svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+                path(d='M17 10L12 15L7 10' stroke='#222222')
+
+        button(type="submit").btn Рассчитать 
+    
+    .calculator-mobile__item
+      a.calculator__calculator-tab(href='#')
+        .icon
+          svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+            path(d='M13.6177 21.367C13.1841 21.773 12.6044 22 12.0011 22C11.3978 22 10.8182 21.773 10.3845 21.367C6.41302 17.626 1.09076 13.4469 3.68627 7.37966C5.08963 4.09916 8.45834 2 12.0011 2C15.5439 2 18.9126 4.09916 20.316 7.37966C22.9082 13.4393 17.599 17.6389 13.6177 21.367Z' stroke-width='1.5')
+            path(d='M15.5 11C15.5 12.933 13.933 14.5 12 14.5C10.067 14.5 8.5 12.933 8.5 11C8.5 9.067 10.067 7.5 12 7.5C13.933 7.5 15.5 9.067 15.5 11Z' stroke-width='1.5')
+        span Отследить
+
+        .arrow
+          svg(width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+            path(d='M15 7.5L10 12.5L5 7.5' stroke='#808080')
+
+
+      .calculator__calculator-calculation
+        .calculator__calculator-calculation-col
+          .input.input--icon
+            .icon
+              svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+                g(clip-path='url(#clip0_27_11)')
+                  path(d='M16.5833 16.5833L20.3333 20.3333' stroke='#009688' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+                  path(d='M18.6667 11.1667C18.6667 7.02452 15.3088 3.66666 11.1667 3.66666C7.02452 3.66666 3.66666 7.02452 3.66666 11.1667C3.66666 15.3088 7.02452 18.6667 11.1667 18.6667C15.3088 18.6667 18.6667 15.3088 18.6667 11.1667Z' stroke='#009688' stroke-width='1.5' stroke-linejoin='round')
+                defs
+                  clippath#clip0_27_11
+                    rect(width='20' height='20' fill='white' transform='translate(2 2)')
+            label.label(for='order-number') Укажите номер заказа
+            input#order-number(type='text')
+        button.btn(type='submit') Отследить 
+    
+    .calculator-mobile__item
+      a.calculator__calculator-tab(href='#')
+        .icon
+          svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+            path(d='M3.5 10C3.5 6.22876 3.5 4.34315 4.7448 3.17157C5.98959 2 7.99306 2 12 2H12.7727C16.0339 2 17.6645 2 18.7969 2.79784C19.1214 3.02643 19.4094 3.29752 19.6523 3.60289C20.5 4.66867 20.5 6.20336 20.5 9.27273V11.8182C20.5 14.7814 20.5 16.2629 20.0311 17.4462C19.2772 19.3486 17.6829 20.8491 15.6616 21.5586C14.4044 22 12.8302 22 9.68182 22C7.88275 22 6.98322 22 6.26478 21.7478C5.10979 21.3424 4.19875 20.4849 3.76796 19.3979C3.5 18.7217 3.5 17.8751 3.5 16.1818V10Z' stroke-width='1.5' stroke-linejoin='round')
+            path(d='M20.5 12C20.5 13.8409 19.0076 15.3333 17.1667 15.3333C16.5009 15.3333 15.716 15.2167 15.0686 15.3901C14.4935 15.5442 14.0442 15.9935 13.8901 16.5686C13.7167 17.216 13.8333 18.0009 13.8333 18.6667C13.8333 20.5076 12.3409 22 10.5 22' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+            path(d='M8 7H15' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+            path(d='M8 11H11' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+
+        span Заключить договор
+
+        .arrow
+          svg(width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+            path(d='M15 7.5L10 12.5L5 7.5' stroke='#808080')
+
+
+      .calculator__calculator-calculation
+        .calculator__calculator-calculation-col
+          .input
+            label.label(for='name') Имя
+            input#name(type='text')
+        .calculator__calculator-calculation-col.calculator__calculator-calculation-col_phone-select
+          .select.select--phone.select--typical.focused
+            input(type='hidden' value='+996')
+            .select__selected +996
+            .select__dropdown
+              .select__dropdown-wrap
+                .select__dropdown-option(data-option='+7')
+                  span.flag
+                    img(src='images/dist/ru.webp' alt='')
+                  | +7
+                .select__dropdown-option(data-option='+7')
+                  span.flag
+                    img(src='images/dist/kz.webp' alt='')
+                  | +7
+                .select__dropdown-option(data-option='+998')
+                  span.flag
+                    img(src='images/dist/uz.webp' alt='')
+                  | +998
+                .select__dropdown-option(data-option='+996')
+                  span.flag
+                    img(src='images/dist/kg.webp' alt='')
+                  | +996
+                .select__dropdown-option(data-option='+996')
+                  span.flag
+                    img(src='images/dist/kg.webp' alt='')
+                  | +996
+            .icon
+              svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+                path(d='M17 10L12 15L7 10' stroke='#222222')
+          .input
+            label.label(for='phone') Телефон
+            input#phone(type='text')
+        button.btn(type='submit') Заключить договор 

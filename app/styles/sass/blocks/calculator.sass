@@ -2,34 +2,37 @@
   position: relative
   z-index: 3
   padding-top: rem(20)
-  
+
   &__calculator
     max-width: rem(1430)
     margin: rem(40) auto
-    
+
     @include lg
       max-width: rem(1050)
-    
+
     @include md
       max-width: rem(800)
 
     @include sm
       max-width: 100%
 
+    @include xs
+      display: none
+
     &-wrap
-      padding: 0 rem(15)  
-      
+      padding: 0 rem(15)
+
       @include sm
         padding: 0
 
     &-top
       @include aife-jfcsb
-      
+
       @include md
         flex-direction: column-reverse
         align-items: flex-start
 
-    &-tabs-wrap 
+    &-tabs-wrap
       position: relative
       width: 100%
       margin-top: rem(20)
@@ -37,7 +40,7 @@
       &.open
 
         .calculator__calculator-tabs-selected
-          border-bottom: none 
+          border-bottom: none
           border-radius: rem(5) rem(5) 0 0
 
         .calculator__calculator-tabs
@@ -46,7 +49,7 @@
           pointer-events: inherit
 
         .calculator__calculator-tabs-selected-arrow
-          transform: rotate(180deg)  
+          transform: rotate(180deg)
 
     &-tabs-selected
       cursor: pointer
@@ -62,7 +65,7 @@
       .icon
         margin-right: rem(10)
         width: 20px
-        height: 20px 
+        height: 20px
         svg
           path
             stroke: $mc
@@ -78,10 +81,16 @@
         right: rem(-5)
         transition: $tr
 
+    .tabs
+      @include xs
+        display: none
 
     &-tabs
       @include aistr
       padding: 0
+
+      @include xs
+        flex-direction: column
 
       li
         list-style: none
@@ -89,10 +98,11 @@
 
         @include md
           margin-right: rem(5)
-        
-        @include sm
-          margin: 0
-        
+
+        @include xs
+          margin-right: 0
+          margin-bottom: rem(10)
+
         &:last-child
           margin-right: 0
 
@@ -104,25 +114,7 @@
             .icon
               svg
                 path
-                  stroke: $wc  
-          
-      
-      @include sm
-        display: block
-        position: absolute
-        top: 100%
-        background: $wc
-        z-index: 1
-        border-radius: 0 0 rem(5)
-        overflow: hidden
-        border: rem(1) solid $mc
-        width: 100%
-        transform: translateY(-10px)
-        transition: $tr
-        pointer-events: none
-        opacity: 0
-
-
+                  stroke: $wc
 
     &-tab
       background: #F8F8F8
@@ -135,7 +127,7 @@
       padding: rem(10) rem(24)
       cursor: pointer
       text-align: center
-      
+
       @include lg
         padding: rem(7) rem(10)
         font-size: rem(14)
@@ -144,13 +136,13 @@
         padding: rem(5) rem(15)
         font-size: rem(13)
 
-      @include sm
-        border-radius: 0 
-        margin: 0
-        padding: rem(7) rem(10)
+      @include xs
+        padding: rem(10) rem(24)
+        border-radius: rem(8)
 
       &:last-child
         margin-right: 0
+        margin-bottom: 0
 
       .icon
         margin-right: rem(10)
@@ -162,8 +154,6 @@
           max-width: rem(20)
           height: rem(20)
           margin-right: rem(5)
-
-        
 
         svg
           path
@@ -179,11 +169,12 @@
             path
               stroke: $wc
 
-      
-
     &-switch
       @include aistr
-      
+
+      @include xs
+        width: 100%
+
       &-item
         transition: $tr
         @include aic-jcc
@@ -196,7 +187,13 @@
         border-radius: rem(8) rem(8) 0 0
         margin-right: rem(8)
         white-space: nowrap
-        
+
+        @include xs
+          width: 100%
+          max-width: 50%
+          font-size: rem(12)
+          padding: rem(10) rem(12)
+
         &:last-child
           margin-right: 0
 
@@ -205,17 +202,17 @@
           background: $wc
           color: $mc
           box-shadow: 0px -5px 8px 0px rgba(0, 0, 0, 0.10)
-    
+
     &-bottom
       background-color: $wc
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15)
       border-radius: rem(40)
       padding: rem(40) 0
-      
+
       @include lg
         padding: rem(30) 0
         border-radius: rem(35)
-        
+
       @include md
         border-radius: rem(30)
 
@@ -225,7 +222,7 @@
 
     &-calculation
       @include jfcsb
-      
+
       @include lg
         flex-wrap: wrap
         justify-content: center
@@ -235,53 +232,57 @@
         white-space: nowrap
 
         @include lg
-          margin-left: 0   
+          margin-left: 0
 
     &-calculation-col
       margin-right: rem(24)
       width: 100%
 
-      
       @include lg
         margin-right: 0
         margin-bottom: rem(30)
+
+      @include xs
+        margin-bottom: rem(24)
 
       &:first-child
         margin-right: 0
 
       &:nth-last-child(2)
-        margin-right: 0  
+        margin-right: 0
 
         @include lg
-          margin-bottom: rem(30)   
+          margin-bottom: rem(30)
+
+        @include xs
+          margin-bottom: rem(24)  
 
       &--select
-        max-width: 84.5%  
-        
+        max-width: 84.5%
+
         @include md
-          max-width: 79%  
+          max-width: 79%
 
         @include sm
           max-width: 72.2%
 
         @include xs
-          max-width: 100%    
+          max-width: 100%
 
       &_phone-select
-       
+
         @include aic
 
         .select
           max-width: rem(100)
           margin: 0 rem(24)
-          
+
           @include lg
             margin-left: 0
             margin-right: rem(15)
 
           @include xs
             margin-right: rem(5)
-
 
     &-city-list
       padding: 0
@@ -292,35 +293,41 @@
         list-style: none
         display: inline-block
         margin-right: rem(5)
-        
+
         &:last-child
           margin-right: 0
-        
+
         a
           text-decoration: underline
           font-size: rem(15)
           color: $textcolor
-          
+
           &:hover
-            color: $mc  
+            color: $mc
 
     .tabs_item
       display: none
+
+      @include xs
+        display: block
+
       &:first-child
         display: block
 
-    
   .btn-switch
     cursor: pointer
     margin: 0 rem(8)
-    
+
     @include lg
-      transform:  translateY(-20px) rotate(90deg)
-    
+      transform: translateY(-20px) rotate(90deg)
+
+    @include xs
+      display: none
+
     &:hover
       .icon
         transition: $tr
-        transform: scale(1.1)       
+        transform: scale(1.1)
 
   &--gradient
     .calculator__calculator
@@ -331,34 +338,103 @@
         border-radius: 0
         box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15)
         background: linear-gradient(180deg, #009688 0%, #81C784 100%)
-      
-      .calculator__calculator-city-list 
+
+      .calculator__calculator-city-list
         li
           a
             color: $wc
             &:hover
               color: $bc
-    
+
     // .not-empty .label,
     // .label.active,
     // .label.active1
     //   color: $wc!important
-    
-    .tab_content_select  
+
+    .tab_content_select
       .not-empty .label,
       .label.active,
       .label.active1
         color: $mc
-    
+
     .active1,
     .open .label,
     .not-empty .label
       color: $wc
 
-
     .btn
       background: $sc
-      
+
       &:hover
         background: $bc
 
+.calculator-mobile
+  display: none
+  margin-top: rem(40)
+  margin-bottom: rem(30)
+
+  @include xs
+    display: block
+
+  .calculator__calculator-switch
+    margin-bottom: rem(40)
+
+  .calculator__calculator-tab
+    position: relative
+    font-size: rem(15)
+    
+    &.open
+      border-radius: rem(8) rem(8) 0 0 
+      background: $mc
+      color: $wc
+      
+      .icon,
+      .arrow
+        svg
+          path
+            stroke: $wc
+      
+      .arrow
+        transform: translateY(-50%) rotate(180deg) 
+    
+    .icon
+      min-width: rem(24)
+      max-width: rem(24)
+      min-height: rem(24)
+      max-height: rem(24)
+      margin-right: rem(10)
+
+      svg
+        path
+          stroke: $mc
+
+    .arrow
+      @include aic-jcc
+      position: absolute
+      right: rem(24)
+      top: 50%
+      transform: translateY(-50%)
+      transition: $tr
+
+      svg
+        path
+          transition: $tr
+
+  .calculator__calculator-calculation
+    padding: rem(15)
+    border-radius: 0 0 rem(20) rem(20)
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.15)
+    display: none
+
+  &__item
+    margin-bottom: rem(10)
+
+    &:last-child
+      margin-bottom: 0
+
+    .input__search-dropdown-wrap,
+    .select__dropdown
+      z-index: 2  
+
+    .btn
+      width: 100%   

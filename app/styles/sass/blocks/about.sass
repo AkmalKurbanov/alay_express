@@ -205,6 +205,10 @@
   padding: rem(60) 0
   overflow: hidden
 
+  @include xs
+    padding: rem(30) 0
+
+
   .title
     margin-bottom: rem(24)
 
@@ -452,6 +456,8 @@
         height: rem(200)
 
   &__btn-wrap
+    @include xs
+      @include aic
     .btn
       margin-top: rem(24)
       margin-right: rem(40)
@@ -460,12 +466,9 @@
         margin-right: rem(10)
 
       @include xs
-        margin-right: 0
-        max-width: 100%  
-        display: flex  
-        margin-top: rem(15)
-
-      
+        max-width: 50%
+        width: 100%
+        
       &:last-child
         margin-right: 0
 

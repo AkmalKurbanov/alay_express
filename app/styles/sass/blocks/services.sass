@@ -1,8 +1,14 @@
 .services
   margin-top: rem(80)
 
+  @include xs
+    margin-top: rem(30)
+  
   &__wrap
     margin-top: rem(60)
+  
+    @include xs
+      margin-top: rem(30)
 
   &__item
     padding: rem(40)  
@@ -23,7 +29,8 @@
     @include xs
       padding: rem(15)  
       width: 100%
-      min-height: rem(170)
+      min-height: auto
+
 
     &:last-child
       @include xs
@@ -60,7 +67,3 @@
       font-size: rem(15)
       line-height: rem(21)        
     
-    @include sm
-      font-size: rem(14)
-      line-height: rem(14)
-      
