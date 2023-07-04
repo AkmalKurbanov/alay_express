@@ -67,8 +67,8 @@ if (window.matchMedia('(max-width: 991px)').matches) {
 }
 
 $('.calculator__calculator-tab-wrap .calculator__calculator-tab').on('click', function () {
-	$(this).parents('.calculator__calculator-tab-wrap').addClass('open');
-	$('.calculator__calculator-tab-wrap').not($(this).parents('.calculator__calculator-tab-wrap')).removeClass('open');
+	$(this).parents('.calculator__calculator-tab-wrap').addClass('open-tab');
+	$('.calculator__calculator-tab-wrap').not($(this).parents('.calculator__calculator-tab-wrap')).removeClass('open-tab');
 });
 
 

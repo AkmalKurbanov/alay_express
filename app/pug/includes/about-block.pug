@@ -2,7 +2,9 @@
   .container 
     .about-block__wrap
       .about-block__col
-        .about-block__img-wrap
+        .about-block__img
+          img(src="images/dist/about-block1.webp", alt="")
+        //- .about-block__img-wrap
           each about in [1,2,3]
             .about-block__img
               img(src="images/dist/about"+about+".webp", alt="")
