@@ -1,12 +1,12 @@
 .calculator
   position: relative
-  z-index: 3
+  z-index: 5
   padding-top: rem(20)
 
   &__calculator
     max-width: rem(1430)
     margin: rem(40) auto
-
+    min-height: calc( +200px )
     @include lg
       max-width: rem(1050)
 
@@ -15,9 +15,6 @@
 
     @include sm
       max-width: 100%
-
-    @include xs
-      display: none
 
     &-wrap
       padding: 0 rem(15)
@@ -37,84 +34,14 @@
       width: 100%
       margin-top: rem(20)
 
-      &.open
-
-        .calculator__calculator-tabs-selected
-          border-bottom: none
-          border-radius: rem(5) rem(5) 0 0
-
-        .calculator__calculator-tabs
-          opacity: 1
-          transform: none
-          pointer-events: inherit
-
-        .calculator__calculator-tabs-selected-arrow
-          transform: rotate(180deg)
-
-    &-tabs-selected
-      cursor: pointer
-      padding: rem(5) rem(30) rem(5) rem(10)
-      border-radius: rem(5)
-      border: rem(1) solid $mc
-      position: relative
-      display: none
-
-      @include sm
-        @include aic
-
-      .icon
-        margin-right: rem(10)
-        width: 20px
-        height: 20px
-        svg
-          path
-            stroke: $mc
-            transition: $tr
-
-      span
-        color: $mc
-        font-weight: 500
-        font-size: rem(13)
-
-      &-arrow
-        position: absolute
-        right: rem(-5)
-        transition: $tr
-
-    .tabs
-      @include xs
-        display: none
-
     &-tabs
       @include aistr
       padding: 0
 
-      @include xs
+      @include md
         flex-direction: column
 
-      li
-        list-style: none
-        margin-right: rem(10)
-
-        @include md
-          margin-right: rem(5)
-
-        @include xs
-          margin-right: 0
-          margin-bottom: rem(10)
-
-        &:last-child
-          margin-right: 0
-
-        &.current
-          a
-            background: $mc
-            color: $wc
-
-            .icon
-              svg
-                path
-                  stroke: $wc
+      
 
     &-tab
       background: #F8F8F8
@@ -127,16 +54,14 @@
       padding: rem(10) rem(24)
       cursor: pointer
       text-align: center
+      position: relative
 
       @include lg
         padding: rem(7) rem(10)
         font-size: rem(14)
 
       @include md
-        padding: rem(5) rem(15)
-        font-size: rem(13)
-
-      @include xs
+        font-size: rem(15)
         padding: rem(10) rem(24)
         border-radius: rem(8)
 
@@ -155,15 +80,37 @@
           height: rem(20)
           margin-right: rem(5)
 
+        @include xs
+          min-width: rem(24)
+          max-width: rem(24)
+          height: rem(24)
+
         svg
           path
             stroke: $textcolor
             transition: $tr
 
+      .arrow
+        position: absolute
+        right: rem(24)
+        top: 50%
+        transform: translateY(-50%)
+        transition: $tr
+        display: none
+        
+        @include md
+          @include aic-jcc
+
+
+        svg
+          path
+            transition: $tr      
+
       &:hover
         background-color: $mc
         color: $wc
 
+        .arrow,
         .icon
           svg
             path
@@ -208,22 +155,33 @@
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15)
       border-radius: rem(40)
       padding: rem(40) 0
+      display: none
+      position: absolute
+      width: 1310px
+      top: 100%
+      left: 0
+      z-index: 1
 
       @include lg
         padding: rem(30) 0
         border-radius: rem(35)
 
       @include md
-        border-radius: rem(30)
+        padding: rem(20)  
+        position: relative
+        left: auto!important
+        top: auto!important
+        width: auto!important
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.15)
+        border-radius:  0 0 rem(20) rem(20)
+        padding-left: 0
+        padding-right: 0
 
-      @include sm
-        border-radius: 0
-        box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.15)
-
+        
     &-calculation
       @include jfcsb
 
-      @include lg
+      @include md
         flex-wrap: wrap
         justify-content: center
 
@@ -239,23 +197,30 @@
       width: 100%
 
       @include lg
-        margin-right: 0
-        margin-bottom: rem(30)
+        margin-right: rem(15)
 
-      @include xs
+      @include md
         margin-bottom: rem(24)
+        margin-right: 0
 
       &:first-child
         margin-right: 0
+
+        @include lg
+          margin-right: rem(15)
+
+        @include md
+          margin-right: 0  
 
       &:nth-last-child(2)
         margin-right: 0
 
         @include lg
-          margin-bottom: rem(30)
+          margin-right: rem(15)
 
-        @include xs
+        @include md
           margin-bottom: rem(24)  
+          margin-right: 0
 
       &--select
         max-width: 84.5%
@@ -302,25 +267,23 @@
           font-size: rem(15)
           color: $textcolor
 
+          @include lg
+            font-size: rem(12)
+
           &:hover
             color: $mc
 
-    .tabs_item
-      display: none
-
-      @include xs
-        display: block
-
-      &:first-child
-        display: block
+  
 
   .btn-switch
     cursor: pointer
     margin: 0 rem(8)
 
+    // @include lg
+    //   transform: translateY(-20px) rotate(90deg)
     @include lg
-      transform: translateY(-20px) rotate(90deg)
-
+      display: none
+      
     @include xs
       display: none
 
@@ -368,13 +331,40 @@
       &:hover
         background: $bc
 
+  
+.calculator__calculator-tab-wrap
+  margin-right: rem(10)
+
+  @include md
+    margin-right: 0
+    margin-bottom: rem(10)
+
+  &:last-child
+    margin-bottom: 0
+
+  &.open
+    .calculator__calculator-tab
+      border-radius: rem(8) rem(8) 0 0
+      background: $mc
+      color: $wc
+      svg
+        path
+          stroke: $wc
+      .arrow
+        transform: translateY(-50%) rotate(180deg)
+    .calculator__calculator-bottom
+      display: block
+
+  .input__search-dropdown-wrap,
+  .select__dropdown
+    z-index: 2      
+
+
 .calculator-mobile
   display: none
   margin-top: rem(40)
   margin-bottom: rem(30)
 
-  @include xs
-    display: block
 
   .calculator__calculator-switch
     margin-bottom: rem(40)

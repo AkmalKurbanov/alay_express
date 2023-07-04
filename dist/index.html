@@ -305,13 +305,14 @@
           </div>
         </div>
         <div class="calculator__calculator-wrap">
-          <div class="calculator__calculator tab">
+          <div class="calculator__calculator">
             <form action="#"> 
-              <div class="container"> 
+              <div class="container" id="container">
                 <div class="calculator__calculator-top">
                   <div class="calculator__calculator-tabs-wrap">
-                    <ul class="calculator__calculator-tabs tabs">
-                      <li><a class="calculator__calculator-tab" href="#">
+                    <div class="calculator__calculator-tabs">
+                      <div class="calculator__calculator-tab-wrap open">
+                        <div class="calculator__calculator-tab">
                           <div class="icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M21 19.5C21 18.6716 20.3284 18 19.5 18C18.6716 18 18 18.6716 18 19.5C18 20.3284 18.6716 21 19.5 21C20.3284 21 21 20.3284 21 19.5Z" stroke-width="1.5"></path>
@@ -324,15 +325,199 @@
                               <path d="M6 12C6 11.1716 5.32843 10.5 4.5 10.5C3.67157 10.5 3 11.1716 3 12C3 12.8284 3.67157 13.5 4.5 13.5C5.32843 13.5 6 12.8284 6 12Z" stroke-width="1.5"></path>
                               <path d="M6 4.5C6 3.67157 5.32843 3 4.5 3C3.67157 3 3 3.67157 3 4.5C3 5.32843 3.67157 6 4.5 6C5.32843 6 6 5.32843 6 4.5Z" stroke-width="1.5"></path>
                             </svg>
-                          </div><span>Калькулятор</span></a></li>
-                      <li><a class="calculator__calculator-tab" href="#">
-                          <div class="icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M13.6177 21.367C13.1841 21.773 12.6044 22 12.0011 22C11.3978 22 10.8182 21.773 10.3845 21.367C6.41302 17.626 1.09076 13.4469 3.68627 7.37966C5.08963 4.09916 8.45834 2 12.0011 2C15.5439 2 18.9126 4.09916 20.316 7.37966C22.9082 13.4393 17.599 17.6389 13.6177 21.367Z" stroke-width="1.5"></path>
-                              <path d="M15.5 11C15.5 12.933 13.933 14.5 12 14.5C10.067 14.5 8.5 12.933 8.5 11C8.5 9.067 10.067 7.5 12 7.5C13.933 7.5 15.5 9.067 15.5 11Z" stroke-width="1.5"></path>
+                          </div><span>Калькулятор</span>
+                          <div class="arrow">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M15 7.5L10 12.5L5 7.5" stroke="#808080"></path>
                             </svg>
-                          </div><span>Отследить</span></a></li>
-                      <li><a class="calculator__calculator-tab" href="#">
+                          </div>
+                        </div>
+                        <div class="calculator__calculator-bottom">
+                          <div class="container">
+                            <div class="calculator__calculator-calculation">
+                              <div class="calculator__calculator-calculation-col">
+                                <div class="input input--icon">
+                                  <div class="icon"> 
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <g clip-path="url(#clip0_27_11)">
+                                        <path d="M16.5833 16.5833L20.3333 20.3333" stroke="#009688" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M18.6667 11.1667C18.6667 7.02452 15.3088 3.66666 11.1667 3.66666C7.02452 3.66666 3.66666 7.02452 3.66666 11.1667C3.66666 15.3088 7.02452 18.6667 11.1667 18.6667C15.3088 18.6667 18.6667 15.3088 18.6667 11.1667Z" stroke="#009688" stroke-width="1.5" stroke-linejoin="round"></path>
+                                      </g>
+                                      <defs>
+                                        <clippath id="clip0_27_11">
+                                          <rect width="20" height="20" fill="white" transform="translate(2 2)"></rect>
+                                        </clippath>
+                                      </defs>
+                                    </svg>
+                                  </div>
+                                  <label class="label" for="from-where">Откуда</label>
+                                  <input type="text" id="from-where">
+                                </div>
+                                <ul class="calculator__calculator-city-list"> 
+                                  <li> <a href="#">Москва</a></li>
+                                  <li> <a href="#">Санкт-Петербург</a></li>
+                                  <li> <a href="#">Новосибирск</a></li>
+                                </ul>
+                              </div>
+                              <div class="btn-switch"> 
+                                <div class="icon">
+                                  <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="24.3334" width="24" height="24" rx="8" transform="rotate(90 24.3334 0)" fill="#009688"></rect>
+                                    <path d="M20.6667 9L21.0087 8.63523L21.3978 9L21.0087 9.36477L20.6667 9ZM12.6667 9.5C12.3906 9.5 12.1667 9.27614 12.1667 9C12.1667 8.72386 12.3906 8.5 12.6667 8.5V9.5ZM17.8087 5.63523L21.0087 8.63523L20.3248 9.36477L17.1248 6.36477L17.8087 5.63523ZM21.0087 9.36477L17.8087 12.3648L17.1248 11.6352L20.3248 8.63523L21.0087 9.36477ZM20.6667 9.5H12.6667V8.5H20.6667V9.5Z" fill="white"></path>
+                                    <path d="M3.66675 15L3.3342 14.6266L2.91497 15L3.3342 15.3734L3.66675 15ZM19.6667 15.5C19.9429 15.5 20.1667 15.2761 20.1667 15C20.1667 14.7239 19.9429 14.5 19.6667 14.5L19.6667 15.5ZM6.70263 11.6266L3.3342 14.6266L3.99929 15.3734L7.36771 12.3734L6.70263 11.6266ZM3.3342 15.3734L6.70262 18.3734L7.36771 17.6266L3.99929 14.6266L3.3342 15.3734ZM3.66675 15.5L19.6667 15.5L19.6667 14.5L3.66675 14.5L3.66675 15.5Z" fill="white"></path>
+                                  </svg>
+                                </div>
+                              </div>
+                              <div class="calculator__calculator-calculation-col">
+                                <div class="input input--icon focused">
+                                  <div class="icon"> 
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <g clip-path="url(#clip0_27_11)">
+                                        <path d="M16.5833 16.5833L20.3333 20.3333" stroke="#009688" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M18.6667 11.1667C18.6667 7.02452 15.3088 3.66666 11.1667 3.66666C7.02452 3.66666 3.66666 7.02452 3.66666 11.1667C3.66666 15.3088 7.02452 18.6667 11.1667 18.6667C15.3088 18.6667 18.6667 15.3088 18.6667 11.1667Z" stroke="#009688" stroke-width="1.5" stroke-linejoin="round"></path>
+                                      </g>
+                                      <defs>
+                                        <clippath id="clip0_27_11">
+                                          <rect width="20" height="20" fill="white" transform="translate(2 2)"></rect>
+                                        </clippath>
+                                      </defs>
+                                    </svg>
+                                  </div>
+                                  <label class="label" for="where">Куда </label>
+                                  <input type="text" id="where">
+                                  <div class="input__search-dropdown-wrap">
+                                    <div class="input__search-dropdown">
+                                      <div class="input__search-dropdown-option-wrap">
+                                        <div class="input__search-dropdown-option">Москва, Россия</div>
+                                        <div class="input__search-dropdown-option">Московский, Новомосковский административный округ, Москва, Россия</div>
+                                        <div class="input__search-dropdown-option">посёлок завода Мосрентген, Москва, Россия</div>
+                                        <div class="input__search-dropdown-option">посёлок городского типа Мостовской, Краснодарский край, Россия</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <ul class="calculator__calculator-city-list"> 
+                                  <li> <a href="#">Москва</a></li>
+                                  <li> <a href="#">Санкт-Петербург</a></li>
+                                  <li> <a href="#">Новосибирск</a></li>
+                                </ul>
+                              </div>
+                              <div class="calculator__calculator-calculation-col">
+                                <div class="select">
+                                  <label class="label">Размер посылки </label>
+                                  <div class="select__selected"></div>
+                                  <div class="select__dropdown">
+                                    <div class="tab_select">
+                                      <ul class="tabs_select">
+                                        <li><a href="#">Точные размеры</a></li>
+                                        <li><a href="#">Примерно</a></li>
+                                      </ul>
+                                      <div class="tab_content_select">
+                                        <div class="tabs_item_select">
+                                          <div class="select__list">
+                                            <label class="select__list-item" for="size1">
+                                              <input type="radio" value="size1" name="размер" id="size1">
+                                              <div class="select__list-item-img"> <img src="images/dist/envelope.webp" alt=""></div>
+                                              <div class="select__list-item-desc"> 
+                                                <h2 data-title="Конверт">Конверт</h2><span data-size="42x35x5 см, до 2 кг">42x35x5 см, до 2 кг</span>
+                                                <p>Маленькие предметы: документы, бижутерия, аксессуары</p>
+                                              </div>
+                                            </label>
+                                            <label class="select__list-item" for="size2">
+                                              <input type="radio" value="size2" name="размер" id="size2">
+                                              <div class="select__list-item-img"> <img src="images/dist/box.webp" alt=""></div>
+                                              <div class="select__list-item-desc"> 
+                                                <h2 data-title="Коробка XS">Коробка XS</h2><span data-size="17x12x9 см, до 0.5 кг">17x12x9 см, до 0.5 кг</span>
+                                                <p>Как коробка от смартфона: бижутерия, игрушки, гаджет</p>
+                                              </div>
+                                            </label>
+                                            <label class="select__list-item" for="size3">
+                                              <input type="radio" value="size3" name="размер" id="size3">
+                                              <div class="select__list-item-img"> <img src="images/dist/box.webp" alt=""></div>
+                                              <div class="select__list-item-desc"> 
+                                                <h2 data-title="Коробка S">Коробка S</h2><span data-size="23x19x10 см, до 2 кг">23x19x10 см, до 2 кг</span>
+                                                <p>Как коробка от утюга</p>
+                                              </div>
+                                            </label>
+                                            <label class="select__list-item" for="size4">
+                                              <input type="radio" value="size4" name="размер" id="size4">
+                                              <div class="select__list-item-img"> <img src="images/dist/box.webp" alt=""></div>
+                                              <div class="select__list-item-desc"> 
+                                                <h2 data-title="Коробка M">Коробка M</h2><span data-size="33x25x15 см, до 5 кг">33x25x15 см, до 5 кг</span>
+                                                <p>Чуть больше обувной коробки</p>
+                                              </div>
+                                            </label>
+                                            <label class="select__list-item" for="size5">
+                                              <input type="radio" value="size5" name="размер" id="size5">
+                                              <div class="select__list-item-img"> <img src="images/dist/box.webp" alt=""></div>
+                                              <div class="select__list-item-desc"> 
+                                                <h2 data-title="Коробка L">Коробка L</h2><span data-size="31x25x38 см, до 12 кг">31x25x38 см, до 12 кг</span>
+                                                <p>Как коробка от микроволновки</p>
+                                              </div>
+                                            </label>
+                                            <label class="select__list-item" for="size6">
+                                              <input type="radio" value="size6" name="размер" id="size6">
+                                              <div class="select__list-item-img"> <img src="images/dist/box.webp" alt=""></div>
+                                              <div class="select__list-item-desc"> 
+                                                <h2 data-title="Большая коробка, ящик">Большая коробка, ящик</h2><span data-size="60x60x30 см, до 20 кг">60x60x30 см, до 20 кг</span>
+                                                <p>Набор посуды, домашний текстиль</p>
+                                              </div>
+                                            </label>
+                                            <label class="select__list-item" for="size7">
+                                              <input type="radio" value="size7" name="размер" id="size7">
+                                              <div class="select__list-item-img"> <img src="images/dist/telejka.webp" alt=""></div>
+                                              <div class="select__list-item-desc"> 
+                                                <h2 data-title="Тележка">Тележка</h2><span data-size="100x100x50 см, до 50 кг">100x100x50 см, до 50 кг</span>
+                                                <p>Большая посылка, например пылесос</p>
+                                              </div>
+                                            </label>
+                                            <label class="select__list-item" for="size8">
+                                              <input type="radio" value="size8" name="размер" id="size8">
+                                              <div class="select__list-item-img"> <img src="images/dist/paleta.webp" alt=""></div>
+                                              <div class="select__list-item-desc"> 
+                                                <h2 data-title="Палета">Палета</h2><span data-size="120x120x80 см, до 200 кг">120x120x80 см, до 200 кг</span>
+                                                <p>Крупный груз: крупная бытовая техника, домашняя библиотека</p>
+                                              </div>
+                                            </label>
+                                          </div>
+                                        </div>
+                                        <div class="tabs_item_select">
+                                          <div class="input-wrap">
+                                            <div class="input">
+                                              <input type="text">
+                                              <label class="label">Длина, см</label>
+                                            </div>
+                                            <div class="input">
+                                              <input type="text">
+                                              <label class="label">Ширина, см</label>
+                                            </div>
+                                            <div class="input">
+                                              <input type="text">
+                                              <label class="label">Высота, см</label>
+                                            </div>
+                                            <div class="input">
+                                              <input type="text">
+                                              <label class="label">Вес, кг</label>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="icon"> 
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M17 10L12 15L7 10" stroke="#222222"></path>
+                                    </svg>
+                                  </div>
+                                </div>
+                              </div>
+                              <button class="btn" type="submit">Рассчитать </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="calculator__calculator-tab-wrap">
+                        <div class="calculator__calculator-tab">
                           <div class="icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M3.5 10C3.5 6.22876 3.5 4.34315 4.7448 3.17157C5.98959 2 7.99306 2 12 2H12.7727C16.0339 2 17.6645 2 18.7969 2.79784C19.1214 3.02643 19.4094 3.29752 19.6523 3.60289C20.5 4.66867 20.5 6.20336 20.5 9.27273V11.8182C20.5 14.7814 20.5 16.2629 20.0311 17.4462C19.2772 19.3486 17.6829 20.8491 15.6616 21.5586C14.4044 22 12.8302 22 9.68182 22C7.88275 22 6.98322 22 6.26478 21.7478C5.10979 21.3424 4.19875 20.4849 3.76796 19.3979C3.5 18.7217 3.5 17.8751 3.5 16.1818V10Z" stroke-width="1.5" stroke-linejoin="round"></path>
@@ -340,254 +525,99 @@
                               <path d="M8 7H15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                               <path d="M8 11H11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                             </svg>
-                          </div><span>Заключить договор</span></a></li>
-                    </ul>
+                          </div><span>Отследить</span>
+                          <div class="arrow">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M15 7.5L10 12.5L5 7.5" stroke="#808080"></path>
+                            </svg>
+                          </div>
+                        </div>
+                        <div class="calculator__calculator-bottom">
+                          <div class="container">
+                            <div class="calculator__calculator-calculation">
+                              <div class="calculator__calculator-calculation-col">
+                                <div class="input input--icon">
+                                  <div class="icon"> 
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <g clip-path="url(#clip0_27_11)">
+                                        <path d="M16.5833 16.5833L20.3333 20.3333" stroke="#009688" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M18.6667 11.1667C18.6667 7.02452 15.3088 3.66666 11.1667 3.66666C7.02452 3.66666 3.66666 7.02452 3.66666 11.1667C3.66666 15.3088 7.02452 18.6667 11.1667 18.6667C15.3088 18.6667 18.6667 15.3088 18.6667 11.1667Z" stroke="#009688" stroke-width="1.5" stroke-linejoin="round"></path>
+                                      </g>
+                                      <defs>
+                                        <clippath id="clip0_27_11">
+                                          <rect width="20" height="20" fill="white" transform="translate(2 2)"></rect>
+                                        </clippath>
+                                      </defs>
+                                    </svg>
+                                  </div>
+                                  <label class="label" for="order-number">Укажите номер заказа</label>
+                                  <input type="text" id="order-number">
+                                </div>
+                              </div>
+                              <button class="btn" type="submit">Отследить </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="calculator__calculator-tab-wrap">
+                        <div class="calculator__calculator-tab">
+                          <div class="icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M3.5 10C3.5 6.22876 3.5 4.34315 4.7448 3.17157C5.98959 2 7.99306 2 12 2H12.7727C16.0339 2 17.6645 2 18.7969 2.79784C19.1214 3.02643 19.4094 3.29752 19.6523 3.60289C20.5 4.66867 20.5 6.20336 20.5 9.27273V11.8182C20.5 14.7814 20.5 16.2629 20.0311 17.4462C19.2772 19.3486 17.6829 20.8491 15.6616 21.5586C14.4044 22 12.8302 22 9.68182 22C7.88275 22 6.98322 22 6.26478 21.7478C5.10979 21.3424 4.19875 20.4849 3.76796 19.3979C3.5 18.7217 3.5 17.8751 3.5 16.1818V10Z" stroke-width="1.5" stroke-linejoin="round"></path>
+                              <path d="M20.5 12C20.5 13.8409 19.0076 15.3333 17.1667 15.3333C16.5009 15.3333 15.716 15.2167 15.0686 15.3901C14.4935 15.5442 14.0442 15.9935 13.8901 16.5686C13.7167 17.216 13.8333 18.0009 13.8333 18.6667C13.8333 20.5076 12.3409 22 10.5 22" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path d="M8 7H15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path d="M8 11H11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                          </div><span>Заключить договор</span>
+                          <div class="arrow">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M15 7.5L10 12.5L5 7.5" stroke="#808080"></path>
+                            </svg>
+                          </div>
+                        </div>
+                        <div class="calculator__calculator-bottom">
+                          <div class="container">
+                            <div class="calculator__calculator-calculation">
+                              <div class="calculator__calculator-calculation-col">
+                                <div class="input">
+                                  <label class="label" for="name">Имя</label>
+                                  <input type="text" id="name">
+                                </div>
+                              </div>
+                              <div class="calculator__calculator-calculation-col calculator__calculator-calculation-col_phone-select"> 
+                                <div class="select select--phone select--typical focused">
+                                  <input type="hidden" value="+996">
+                                  <div class="select__selected">+996</div>
+                                  <div class="select__dropdown">
+                                    <div class="select__dropdown-wrap">
+                                      <div class="select__dropdown-option" data-option="+7"><span class="flag"><img src="images/dist/ru.webp" alt=""></span>+7</div>
+                                      <div class="select__dropdown-option" data-option="+7"><span class="flag"><img src="images/dist/kz.webp" alt=""></span>+7  </div>
+                                      <div class="select__dropdown-option" data-option="+998"><span class="flag"><img src="images/dist/uz.webp" alt=""></span>+998</div>
+                                      <div class="select__dropdown-option" data-option="+996"><span class="flag"><img src="images/dist/kg.webp" alt=""></span>+996</div>
+                                      <div class="select__dropdown-option" data-option="+996"><span class="flag"><img src="images/dist/kg.webp" alt=""></span>+996</div>
+                                    </div>
+                                  </div>
+                                  <div class="icon"> 
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M17 10L12 15L7 10" stroke="#222222"></path>
+                                    </svg>
+                                  </div>
+                                </div>
+                                <div class="input">
+                                  <label class="label" for="phone">Телефон</label>
+                                  <input type="text" id="phone">
+                                </div>
+                              </div>
+                              <button class="btn" type="submit">Заключить договор </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   <div class="calculator__calculator-switch"> 
                     <div class="calculator__calculator-switch-item calculator__calculator-switch-item--active">Физ-лицо</div>
                     <div class="calculator__calculator-switch-item">Интернет-Магазин</div>
-                  </div>
-                </div>
-              </div>
-              <div class="calculator__calculator-bottom tab_content">
-                <div class="container tabs_item">
-                  <div class="calculator__calculator-calculation">
-                    <div class="calculator__calculator-calculation-col">
-                      <div class="input input--icon">
-                        <div class="icon"> 
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_27_11)">
-                              <path d="M16.5833 16.5833L20.3333 20.3333" stroke="#009688" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                              <path d="M18.6667 11.1667C18.6667 7.02452 15.3088 3.66666 11.1667 3.66666C7.02452 3.66666 3.66666 7.02452 3.66666 11.1667C3.66666 15.3088 7.02452 18.6667 11.1667 18.6667C15.3088 18.6667 18.6667 15.3088 18.6667 11.1667Z" stroke="#009688" stroke-width="1.5" stroke-linejoin="round"></path>
-                            </g>
-                            <defs>
-                              <clippath id="clip0_27_11">
-                                <rect width="20" height="20" fill="white" transform="translate(2 2)"></rect>
-                              </clippath>
-                            </defs>
-                          </svg>
-                        </div>
-                        <label class="label" for="from-where">Откуда</label>
-                        <input type="text" id="from-where">
-                      </div>
-                      <ul class="calculator__calculator-city-list"> 
-                        <li> <a href="#">Москва</a></li>
-                        <li> <a href="#">Санкт-Петербург</a></li>
-                        <li> <a href="#">Новосибирск</a></li>
-                      </ul>
-                    </div>
-                    <div class="btn-switch"> 
-                      <div class="icon">
-                        <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <rect x="24.3334" width="24" height="24" rx="8" transform="rotate(90 24.3334 0)" fill="#009688"></rect>
-                          <path d="M20.6667 9L21.0087 8.63523L21.3978 9L21.0087 9.36477L20.6667 9ZM12.6667 9.5C12.3906 9.5 12.1667 9.27614 12.1667 9C12.1667 8.72386 12.3906 8.5 12.6667 8.5V9.5ZM17.8087 5.63523L21.0087 8.63523L20.3248 9.36477L17.1248 6.36477L17.8087 5.63523ZM21.0087 9.36477L17.8087 12.3648L17.1248 11.6352L20.3248 8.63523L21.0087 9.36477ZM20.6667 9.5H12.6667V8.5H20.6667V9.5Z" fill="white"></path>
-                          <path d="M3.66675 15L3.3342 14.6266L2.91497 15L3.3342 15.3734L3.66675 15ZM19.6667 15.5C19.9429 15.5 20.1667 15.2761 20.1667 15C20.1667 14.7239 19.9429 14.5 19.6667 14.5L19.6667 15.5ZM6.70263 11.6266L3.3342 14.6266L3.99929 15.3734L7.36771 12.3734L6.70263 11.6266ZM3.3342 15.3734L6.70262 18.3734L7.36771 17.6266L3.99929 14.6266L3.3342 15.3734ZM3.66675 15.5L19.6667 15.5L19.6667 14.5L3.66675 14.5L3.66675 15.5Z" fill="white"></path>
-                        </svg>
-                      </div>
-                    </div>
-                    <div class="calculator__calculator-calculation-col">
-                      <div class="input input--icon focused">
-                        <div class="icon"> 
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_27_11)">
-                              <path d="M16.5833 16.5833L20.3333 20.3333" stroke="#009688" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                              <path d="M18.6667 11.1667C18.6667 7.02452 15.3088 3.66666 11.1667 3.66666C7.02452 3.66666 3.66666 7.02452 3.66666 11.1667C3.66666 15.3088 7.02452 18.6667 11.1667 18.6667C15.3088 18.6667 18.6667 15.3088 18.6667 11.1667Z" stroke="#009688" stroke-width="1.5" stroke-linejoin="round"></path>
-                            </g>
-                            <defs>
-                              <clippath id="clip0_27_11">
-                                <rect width="20" height="20" fill="white" transform="translate(2 2)"></rect>
-                              </clippath>
-                            </defs>
-                          </svg>
-                        </div>
-                        <label class="label" for="where">Куда </label>
-                        <input type="text" id="where">
-                        <div class="input__search-dropdown-wrap">
-                          <div class="input__search-dropdown">
-                            <div class="input__search-dropdown-option-wrap">
-                              <div class="input__search-dropdown-option">Москва, Россия</div>
-                              <div class="input__search-dropdown-option">Московский, Новомосковский административный округ, Москва, Россия</div>
-                              <div class="input__search-dropdown-option">посёлок завода Мосрентген, Москва, Россия</div>
-                              <div class="input__search-dropdown-option">посёлок городского типа Мостовской, Краснодарский край, Россия</div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <ul class="calculator__calculator-city-list"> 
-                        <li> <a href="#">Москва</a></li>
-                        <li> <a href="#">Санкт-Петербург</a></li>
-                        <li> <a href="#">Новосибирск</a></li>
-                      </ul>
-                    </div>
-                    <div class="calculator__calculator-calculation-col">
-                      <div class="select">
-                        <label class="label">Размер посылки </label>
-                        <div class="select__selected"></div>
-                        <div class="select__dropdown">
-                          <div class="tab_select">
-                            <ul class="tabs_select">
-                              <li><a href="#">Точные размеры</a></li>
-                              <li><a href="#">Примерно</a></li>
-                            </ul>
-                            <div class="tab_content_select">
-                              <div class="tabs_item_select">
-                                <div class="select__list">
-                                  <label class="select__list-item" for="size1">
-                                    <input type="radio" value="size1" name="размер" id="size1">
-                                    <div class="select__list-item-img"> <img src="images/dist/envelope.webp" alt=""></div>
-                                    <div class="select__list-item-desc"> 
-                                      <h2 data-title="Конверт">Конверт</h2><span data-size="42x35x5 см, до 2 кг">42x35x5 см, до 2 кг</span>
-                                      <p>Маленькие предметы: документы, бижутерия, аксессуары</p>
-                                    </div>
-                                  </label>
-                                  <label class="select__list-item" for="size2">
-                                    <input type="radio" value="size2" name="размер" id="size2">
-                                    <div class="select__list-item-img"> <img src="images/dist/box.webp" alt=""></div>
-                                    <div class="select__list-item-desc"> 
-                                      <h2 data-title="Коробка XS">Коробка XS</h2><span data-size="17x12x9 см, до 0.5 кг">17x12x9 см, до 0.5 кг</span>
-                                      <p>Как коробка от смартфона: бижутерия, игрушки, гаджет</p>
-                                    </div>
-                                  </label>
-                                  <label class="select__list-item" for="size3">
-                                    <input type="radio" value="size3" name="размер" id="size3">
-                                    <div class="select__list-item-img"> <img src="images/dist/box.webp" alt=""></div>
-                                    <div class="select__list-item-desc"> 
-                                      <h2 data-title="Коробка S">Коробка S</h2><span data-size="23x19x10 см, до 2 кг">23x19x10 см, до 2 кг</span>
-                                      <p>Как коробка от утюга</p>
-                                    </div>
-                                  </label>
-                                  <label class="select__list-item" for="size4">
-                                    <input type="radio" value="size4" name="размер" id="size4">
-                                    <div class="select__list-item-img"> <img src="images/dist/box.webp" alt=""></div>
-                                    <div class="select__list-item-desc"> 
-                                      <h2 data-title="Коробка M">Коробка M</h2><span data-size="33x25x15 см, до 5 кг">33x25x15 см, до 5 кг</span>
-                                      <p>Чуть больше обувной коробки</p>
-                                    </div>
-                                  </label>
-                                  <label class="select__list-item" for="size5">
-                                    <input type="radio" value="size5" name="размер" id="size5">
-                                    <div class="select__list-item-img"> <img src="images/dist/box.webp" alt=""></div>
-                                    <div class="select__list-item-desc"> 
-                                      <h2 data-title="Коробка L">Коробка L</h2><span data-size="31x25x38 см, до 12 кг">31x25x38 см, до 12 кг</span>
-                                      <p>Как коробка от микроволновки</p>
-                                    </div>
-                                  </label>
-                                  <label class="select__list-item" for="size6">
-                                    <input type="radio" value="size6" name="размер" id="size6">
-                                    <div class="select__list-item-img"> <img src="images/dist/box.webp" alt=""></div>
-                                    <div class="select__list-item-desc"> 
-                                      <h2 data-title="Большая коробка, ящик">Большая коробка, ящик</h2><span data-size="60x60x30 см, до 20 кг">60x60x30 см, до 20 кг</span>
-                                      <p>Набор посуды, домашний текстиль</p>
-                                    </div>
-                                  </label>
-                                  <label class="select__list-item" for="size7">
-                                    <input type="radio" value="size7" name="размер" id="size7">
-                                    <div class="select__list-item-img"> <img src="images/dist/telejka.webp" alt=""></div>
-                                    <div class="select__list-item-desc"> 
-                                      <h2 data-title="Тележка">Тележка</h2><span data-size="100x100x50 см, до 50 кг">100x100x50 см, до 50 кг</span>
-                                      <p>Большая посылка, например пылесос</p>
-                                    </div>
-                                  </label>
-                                  <label class="select__list-item" for="size8">
-                                    <input type="radio" value="size8" name="размер" id="size8">
-                                    <div class="select__list-item-img"> <img src="images/dist/paleta.webp" alt=""></div>
-                                    <div class="select__list-item-desc"> 
-                                      <h2 data-title="Палета">Палета</h2><span data-size="120x120x80 см, до 200 кг">120x120x80 см, до 200 кг</span>
-                                      <p>Крупный груз: крупная бытовая техника, домашняя библиотека</p>
-                                    </div>
-                                  </label>
-                                </div>
-                              </div>
-                              <div class="tabs_item_select">
-                                <div class="input-wrap">
-                                  <div class="input">
-                                    <input type="text">
-                                    <label class="label">Длина, см</label>
-                                  </div>
-                                  <div class="input">
-                                    <input type="text">
-                                    <label class="label">Ширина, см</label>
-                                  </div>
-                                  <div class="input">
-                                    <input type="text">
-                                    <label class="label">Высота, см</label>
-                                  </div>
-                                  <div class="input">
-                                    <input type="text">
-                                    <label class="label">Вес, кг</label>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="icon"> 
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M17 10L12 15L7 10" stroke="#222222"></path>
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    <button class="btn" type="submit">Рассчитать </button>
-                  </div>
-                </div>
-                <div class="container tabs_item">
-                  <div class="calculator__calculator-calculation">
-                    <div class="calculator__calculator-calculation-col">
-                      <div class="input input--icon">
-                        <div class="icon"> 
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_27_11)">
-                              <path d="M16.5833 16.5833L20.3333 20.3333" stroke="#009688" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                              <path d="M18.6667 11.1667C18.6667 7.02452 15.3088 3.66666 11.1667 3.66666C7.02452 3.66666 3.66666 7.02452 3.66666 11.1667C3.66666 15.3088 7.02452 18.6667 11.1667 18.6667C15.3088 18.6667 18.6667 15.3088 18.6667 11.1667Z" stroke="#009688" stroke-width="1.5" stroke-linejoin="round"></path>
-                            </g>
-                            <defs>
-                              <clippath id="clip0_27_11">
-                                <rect width="20" height="20" fill="white" transform="translate(2 2)"></rect>
-                              </clippath>
-                            </defs>
-                          </svg>
-                        </div>
-                        <label class="label" for="order-number">Укажите номер заказа</label>
-                        <input type="text" id="order-number">
-                      </div>
-                    </div>
-                    <button class="btn" type="submit">Отследить </button>
-                  </div>
-                </div>
-                <div class="container tabs_item">
-                  <div class="calculator__calculator-calculation">
-                    <div class="calculator__calculator-calculation-col">
-                      <div class="input">
-                        <label class="label" for="name">Имя</label>
-                        <input type="text" id="name">
-                      </div>
-                    </div>
-                    <div class="calculator__calculator-calculation-col calculator__calculator-calculation-col_phone-select"> 
-                      <div class="select select--phone select--typical focused">
-                        <input type="hidden" value="+996">
-                        <div class="select__selected">+996</div>
-                        <div class="select__dropdown">
-                          <div class="select__dropdown-wrap">
-                            <div class="select__dropdown-option" data-option="+7"><span class="flag"><img src="images/dist/ru.webp" alt=""></span>+7</div>
-                            <div class="select__dropdown-option" data-option="+7"><span class="flag"><img src="images/dist/kz.webp" alt=""></span>+7  </div>
-                            <div class="select__dropdown-option" data-option="+998"><span class="flag"><img src="images/dist/uz.webp" alt=""></span>+998</div>
-                            <div class="select__dropdown-option" data-option="+996"><span class="flag"><img src="images/dist/kg.webp" alt=""></span>+996</div>
-                            <div class="select__dropdown-option" data-option="+996"><span class="flag"><img src="images/dist/kg.webp" alt=""></span>+996</div>
-                          </div>
-                        </div>
-                        <div class="icon"> 
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M17 10L12 15L7 10" stroke="#222222"></path>
-                          </svg>
-                        </div>
-                      </div>
-                      <div class="input">
-                        <label class="label" for="phone">Телефон</label>
-                        <input type="text" id="phone">
-                      </div>
-                    </div>
-                    <button class="btn" type="submit">Заключить договор </button>
                   </div>
                 </div>
               </div>
