@@ -27,7 +27,7 @@ header.header
                 rect(width='48.4137' height='47.62' fill='white')
 
                 
-      .header__flex-col
+      //- .header__flex-col
         .header__user-panel
           .header__user-panel-item.header__user-panel-item--phone
             
@@ -58,19 +58,7 @@ header.header
                   a(href="#") РУС 
                   a(href="#") ENG 
 
-          .hamburger
-            span.line
-            span.line
-            span.line
-
-      ul.header__flex-col.header__nav
-        each item,index in ['Отправить посылку ','Интернет-магазинам','Бизнес клиентам','О компании']
-          if index == 0
-            li.active  
-              a(href="#")=item 
-          else  
-            li  
-              a(href="#")=item 
+          
 
       .header__flex-col.header__flex-col--btn
 
@@ -94,6 +82,19 @@ header.header
               path(d='M15.8569 7.2861C15.8569 9.41614 14.1301 11.1429 12.0001 11.1429C9.87005 11.1429 8.14331 9.41614 8.14331 7.2861C8.14331 5.15606 9.87005 3.42932 12.0001 3.42932C14.1301 3.42932 15.8569 5.15606 15.8569 7.2861Z' stroke='white' stroke-width='1.5')
 
           | Вход / Регистрация 
-        
+
+
+      ul.header__flex-col.header__nav
+        each item,index in ['Отправить посылку ','Интернет-магазинам','Бизнес клиентам','О компании']
+          if index == 0
+            li.active  
+              a(href="#")=item 
+          else  
+            li  
+              a(href="#")=item   
         
       
+      .hamburger
+        span.line
+        span.line
+        span.line

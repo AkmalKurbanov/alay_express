@@ -1,0 +1,31 @@
+extends layouts/main
+block title
+  | Not found
+block main
+  .wrapper
+    .content
+        include includes/login-popup
+        include includes/mmenu
+        include includes/header
+
+        .not-found
+          .container 
+            .not-found__img 
+              img(src="images/dist/404.svg", alt="")
+            .not-found__title Страница не найдена
+        
+
+        
+         
+     
+
+    include includes/seo-text
+    include includes/footer
+
+  include includes/scripts
+
+  
+
+
+  
+  

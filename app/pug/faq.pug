@@ -1,0 +1,46 @@
+extends layouts/main
+block title
+  | FAQ
+block main
+  .wrapper
+    .content
+        include includes/login-popup
+        include includes/mmenu
+        include includes/header
+
+        .faq
+          .container 
+            .title
+              span FAQ
+            .faq__flex-wrap
+              .faq__flex-col
+                p 
+                  span Часто задаваемые вопросы
+                  | Мы собрали самые популярные вопросы в одном месте для Вашего удобства. Если Вы не нашли нужный вопрос, Вы можете обратиться в нашу службу поддержки. Мы всегда готовы помочь!  
+              .faq__flex-col
+                .faq__list
+                  each faq in['Как я могу связаться с вашей компанией?','Какие виды оплаты вы принимаете?','Каковы сроки доставки?','Как я могу отслеживать мой заказ?','Где посмотреть, какие товары пришли ко мне на склад?','Безопасно ли хранение посылок на ваших складах?','Как я могу отслеживать мой заказ?','Где посмотреть, какие товары пришли ко мне на склад?','Каковы сроки доставки?']
+                    .faq__item  
+                      .faq__item-title-wrap
+                        .faq__item-title=faq
+                        .icon
+                          img(src="images/dist/angle.svg", alt="")
+                      .faq__item-desc 
+                        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Est maxime modi corrupti nulla veritatis voluptatem possimus perferendis quisquam odio placeat? 
+                  
+        
+
+        
+         
+     
+
+    include includes/seo-text
+    include includes/footer
+
+  include includes/scripts
+
+  
+
+
+  
+  
