@@ -5,4 +5,5 @@ $('.login-js').on('click', function(e){
 });
 $('.window-close').on('click', function(){
   $('.popup').removeClass('open');
+  $('body').removeClass('no-scroll')
 });

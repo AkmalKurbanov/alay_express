@@ -1,0 +1,26 @@
+.popup.order-popup
+  .window
+    .window-close.icon
+      svg(width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg')
+        path(d='M18 6.5L6 18.5' stroke='#222222' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+        path(d='M6 6.5L18 18.5' stroke='#222222' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+    h3.title.title--h3 Оформить посылку
+
+    .window-input-wrap
+      label(for='number') Номер мобильного телефона  
+      .select.select--typical
+        input(type='hidden' value='+996')
+        .select__selected +996
+        .select__dropdown
+          .select__dropdown-option(data-option='+996') +996
+          .select__dropdown-option(data-option='+7') +7
+          .select__dropdown-option(data-option='+1') +1
+        .icon
+          svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+            path(d='M17 10L12 15L7 10' stroke='#222222')
+      .input
+        input(type='text' placeholder="Телефон")
+    .input
+      input(type='text' placeholder="ФИО" name="ФИО")
+
+    button(type="submit").btn Отправить 

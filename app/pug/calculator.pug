@@ -5,6 +5,7 @@ block main
   .wrapper
     .content
     
+        include includes/order-popup
         include includes/login-popup
         include includes/mmenu
         include includes/header
@@ -151,7 +152,7 @@ block main
                     
                         span *Без учета дня приема
 
-                  button.btn(type="submit") Оформить посылку   
+                  a(href="#").btn.order-js Оформить посылку   
                     
         
         
