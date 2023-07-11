@@ -17,10 +17,11 @@
 	
   
   &__wrap
-    @include aifs
+    @include aifs-jfcsb
 
     @include xs
       flex-direction: column-reverse
+      align-items: flex-end
   
   &__desc
     margin-right: rem(40)
@@ -28,6 +29,9 @@
     line-height: rem(14.52)
     color: $bc
     font-weight: 500
+    
+    @include xs
+      margin-right: 0
 
   &__btn
     @include aic
