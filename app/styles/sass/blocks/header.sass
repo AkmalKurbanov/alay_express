@@ -200,7 +200,19 @@
     
     &-name
       color: $mc
-      
+
+  .social
+    li
+      a
+        background: #37474F
+
+        &:hover
+          box-shadow: none
+          background: $bc
+
+        svg
+          path
+            fill: $wc 
 
 .hamburger
   display: none
@@ -240,3 +252,5 @@
 
       &:nth-child(3)
         transform: translateY(-8px) rotate(90deg)
+
+  

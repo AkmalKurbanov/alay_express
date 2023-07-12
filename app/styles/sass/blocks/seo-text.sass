@@ -25,13 +25,30 @@
   
   &__desc
     margin-right: rem(40)
-    font-size: rem(12)
-    line-height: rem(14.52)
-    color: $bc
-    font-weight: 500
+    // font-size: rem(12)
+    // line-height: rem(14.52)
+    // color: $bc
+    // font-weight: 500
     
     @include xs
       margin-right: 0
+    
+    * 
+      color: $bc
+      margin-bottom: rem(10)
+      &:last-child
+        margin-bottom: 0
+    
+    &.open
+      .seo-text__long
+        display: block
+      
+      .seo-text__short
+        display: none  
+  
+  &__long    
+    display: none
+
 
   &__btn
     @include aic
