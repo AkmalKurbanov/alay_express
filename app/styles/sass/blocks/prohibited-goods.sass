@@ -1,0 +1,59 @@
+.prohibited-goods
+  &__list
+    margin-top: rem(30)
+    margin-bottom: rem(40)
+    padding: 0
+    text-align: justify
+
+    li
+      display: inline-block
+      list-style: none
+      margin-bottom: rem(20)
+    a
+      @include aic-jcc
+      background: $wc
+      border-radius: rem(8)
+      box-shadow: 0px 4px 16px 0px rgba(0, 150, 136, 0.15)
+      min-height: rem(44)
+      padding: rem(10) rem(24)
+      color: $textcolor
+      font-size: rem(14)
+      font-weight: 500
+      transition: $tr
+
+      &:hover
+        color: $mc
+
+  &__section
+    padding-top: rem(20)
+    margin-bottom: rem(50)
+
+    .subtitle
+      margin-top: rem(20)
+
+  &__items-wrap
+    @include fww-jfcsb
+    margin-top: rem(40)
+
+  &__item
+    position: relative
+    @include aic
+    border-radius: rem(30)
+    background: #F8F8F8
+    padding: rem(32)
+    width: calc( 50% - 20px )
+    margin-bottom: rem(35)
+
+    &:before
+      position: absolute
+      content: ''
+      width: rem(32)
+      height: rem(32)
+      background-image: url('/images/dist/drop.svg')
+
+    p
+      margin-left: rem(45)
+      color: #4A4A4A
+      font-size: rem(20)
+      font-weight: 500
+      line-height: rem(24)
